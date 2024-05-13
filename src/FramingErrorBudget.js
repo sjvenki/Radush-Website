@@ -1,0 +1,112 @@
+// import React from 'react'
+
+// function FramingErrorBudget() {
+//   return (
+//     <div>FramingErrorBudget</div>
+//   )
+// }
+
+// export default FramingErrorBudget
+
+
+
+
+
+
+import React, { useState,useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { Paper, Typography, Container, Box } from '@mui/material';
+import charlesdeluvioImage from './assets/charlesdeluvio.jpg'; // Importing the image
+import alexanderImage from './assets/alexander.jpg'; // Importing the image
+
+function SLO() {
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm('service_s21p27k', 'template_dfgpafo', form.current, {
+          publicKey: 'BIOJQmRazFk9j29uJ',
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+            console.log("Message sent");
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
+    };
+
+  return (
+    <div style={{ background: 'linear-gradient(135deg, #FFFFFF 7%, #F5CD2A 100%)', minHeight: '100vh' }}>
+    <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 'calc(100vh - 64px - 56px)', paddingTop: '20px', paddingBottom: '20px' }}>
+      <Paper sx={{ padding: '20px', textAlign: 'left', backgroundColor: '#f0f0f0' }}>
+        <Typography variant="h5" component="h1" gutterBottom>
+          <strong>FRAMING ERROR BUDGET POLICIES: BALANCING RELIABILITY AND INNOVATION</strong>
+        </Typography>
+        <Typography variant="body1" paragraph sx={{fontSize:'20px'}}>
+        In the world of software development and service management, striking the right balance between reliability and innovation is crucial. One of the key tools that organisations use to manage this balance is an error budget. In this blog post, we’ll explore how organisations can frame their error budget policies, leveraging real-life examples to illustrate the process.
+        </Typography>
+        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          <img src={charlesdeluvioImage} alt="charlesdeluvioImage" style={{ Width: '100%', height: 'auto' }} />
+        </Box>
+        <Typography variant="h6" component="h2" gutterBottom sx={{ marginTop: '20px' }}>
+          <strong>1. Understanding the Purpose of an Error Budget :</strong>
+        </Typography>
+        <Typography variant="body1" paragraph sx={{fontSize:'20px'}}>
+        Imagine you’re running a restaurant that prides itself on quick service. You want to ensure that orders are delivered within a specific time frame, but you also want to allow room for experimentation and new menu items. Here, an error budget can help. It represents the acceptable margin for errors or delays in order delivery, giving your team the freedom to innovate while maintaining overall reliability.
+        </Typography>
+        <Typography variant="h6" component="h2" gutterBottom sx={{ marginTop: '20px' }}>
+          <strong>2. Real-Life Example :</strong>
+        </Typography>
+        <Typography variant="body1" paragraph sx={{fontSize:'20px'}}>
+        Consider a popular e-commerce platform that aims to provide a seamless shopping experience. To balance reliability and innovation, the organisation sets an SLO that guarantees 99.9% uptime. Based on this, they calculate an error budget that allows for a maximum of 0.1% service disruptions. This provides the development team with a defined threshold for errors, ensuring that they can introduce new features and improvements while still meeting customer expectations.
+        </Typography> 
+        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          <img src={alexanderImage} alt="alexanderImage" style={{ Width: '100%', height: 'auto' }} />
+        </Box>
+        <Typography variant="h6" component="h2" gutterBottom sx={{ marginTop: '20px' }}>
+          <strong>Framing Error Budget Policies :-</strong>
+          <Typography variant="h6" ><strong>1. Define Business Priorities :</strong> </Typography>
+          <Typography sx={{fontSize:'20px'}}>Organisations need to align their error budget policies with their overall business priorities. For example, an online banking platform may prioritise security and reliability, whereas a social media platform may prioritise continuous feature development. The error budget policies should reflect these priorities.</Typography>
+          <Typography variant="h6"><strong>2. Establish SLOs :</strong></Typography>
+          <Typography sx={{fontSize:'20px'}}>Setting clear and measurable Service Level Objectives is the foundation for error budget policies. SLOs define the desired level of performance and reliability based on user expectations, industry standards, and business requirements.</Typography>
+          <Typography variant="h6"><strong>3. Calculate the Error Budget:</strong></Typography>
+          <Typography sx={{fontSize:'20px'}}> Once SLOs are defined, organisations can calculate their error budgets. This involves determining the acceptable threshold for errors or incidents within a specific timeframe. Real-life data and historical performance metrics can inform this calculation.</Typography>
+          <Typography variant="h6"><strong>4. Allocate Resources and Prioritise Efforts: </strong></Typography>
+          <Typography sx={{fontSize:'20px'}}>With the error budget in place, organisations can allocate resources and prioritise efforts effectively. Teams can focus on initiatives that improve reliability while utilising a portion of the error budget for innovation and experimentation.</Typography>
+          <Typography variant="h6"><strong>5. Continuous Monitoring and Adaptation:</strong></Typography>
+          <Typography sx={{fontSize:'20px'}}>Organisations should regularly monitor their error budget utilisation and adjust their policies accordingly. If the error budget is consistently exceeded, it may indicate a need for increased focus on reliability. Conversely, if the error budget remains largely unutilized, it may indicate an opportunity for greater innovation.
+</Typography>
+        </Typography>
+       
+       <Typography sx={{fontSize:'20px'}}> 
+
+Framing error budget policies is a strategic process that allows organisations to balance reliability and innovation. By defining business priorities, establishing SLOs, calculating error budgets, and allocating resources effectively, organisations can foster a culture of continuous improvement and deliver high-quality services that meet customer expectations
+</Typography>
+       
+      </Paper>
+    </Container>
+
+      {/* Form */}
+      <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>
+     <form ref={form} onSubmit={sendEmail} >
+     <p><b style={{fontSize:'20px'}}>Post a comment :</b></p>
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input class='button' type="submit" value="Send" />
+    </form>
+   </Container>
+    </div>
+  );
+}
+
+export default SLO;

@@ -1,0 +1,267 @@
+.navbar-item {
+  cursor: pointer;
+  transition: transform 0.25s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+    color: orange; 
+  }
+}
+
+
+
+
+.image-container {
+  height: 500px;
+}
+
+.text-container {
+  position: absolute;
+  top: 40%; 
+  right: 50%; 
+  transform: translate(-50%, -50%);
+  
+}
+
+.sentence {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.2; 
+  margin-bottom: 5px; 
+}
+
+
+.app-container {
+  background: linear-gradient(180deg, #07282D38 7%, #F5CD2A 100%);
+  min-height: 100vh;
+}
+
+.content-container {
+  padding: 20px;
+}
+
+
+.service1-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.service-image {
+  width: 400px; 
+  height: 275px;
+  border-radius: 20px; 
+  margin-bottom: 10px; 
+  justify-self: center; 
+}
+
+.about-us-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.about-us-image {
+ 
+  height: auto;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+
+.service-background {
+ 
+  background-color: transparent;
+  background-image: linear-gradient(45deg, #F5CD2A 7%, #F5CD2A 100%);
+}
+
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px;
+}
+
+.footer-logo {
+  width: 150px; 
+}
+/* 
+.footer-section {
+  text-align: left;
+} */
+
+.footer-heading {
+  color: black;
+  font-weight: bold;
+}
+
+.footer-item {
+  color: black;
+}
+
+.footer-copyright {
+  width: 100%;
+  margin-left: 0px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+
+.about-section {
+  background-color: transparent;
+  background-image: linear-gradient(45deg, #F5CD2A 7%, #F5CD2A 100%);
+  padding: 10px; 
+}
+
+.about-section-content {
+  margin-top: 20px; 
+}
+
+
+
+
+.over-the-years-image-container {
+  display: flex;
+  justify-content: center;
+  background-color: #F5CD2A; 
+  /* padding: 20px; */
+}
+
+.over-the-years-image {
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
+}
+
+/* .service-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-item-container {
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  padding: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.service-item-container:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
+} */
+
+
+
+ .Content-background {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #FFFFFF 7%, #F5CD2A 100%);
+}
+
+.service-item-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-radius: 8px;
+  padding: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.service-item-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: white; /* Background color inside the box shadow */
+  z-index: -1;
+}
+
+.service-item-container:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.496); /* Adjust the values for hover effect */
+}
+
+
+
+.button{
+  width: 104%;
+}
+
+form{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 50%;
+  font-size: 16px;
+  /* margin-left: 350px; */
+
+  input{
+    margin-bottom: 20px;
+  
+    width: 102%;
+    height: 35px;
+    padding: 7px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgba(220, 220, 220);
+
+    &:focus{
+      border: 2px solid rgba(0, 206, 158, 1);
+    }
+  }
+
+  textarea{
+    max-width: 110%;
+    min-width: 102%;
+    width:40%;
+    max-height: 200px;
+    min-height: 200px;
+    padding: 7px;
+    outline: none;
+    border-radius: 5px;
+    border:  1px solid rgba(220, 220, 220);
+
+    &:focus{
+      border: 2px solid rgba(0, 206, 158, 1);
+    }
+  }
+
+  label{
+    margin-top: 1rem;
+  }
+
+  input[type="submit"]{
+    margin-top: 2rem;
+    cursor: pointer;
+    background-color: rgb(249, 185, 14);
+    color: white;
+    border: none;
+  }
+  
+}
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color */
+}
+
+a:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
+
+.ul{
+  test-align:'left'
+}
