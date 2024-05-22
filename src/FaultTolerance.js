@@ -13,7 +13,7 @@
 
 import React, { useState,useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { Paper, Typography, Container, Box } from '@mui/material';
+import { Paper, Typography, Container, Box,Button } from '@mui/material';
 import alexImage from './assets/alex-shute.jpg'; // Importing the image
 import callCenterImage from './assets/roberto-cortese.jpg'; // Importing the image
 
@@ -92,9 +92,11 @@ function SLO() {
         <Typography sx={{marginTop:'20px',fontSize:'20px'}}>While resilience measures play a crucial role in system stability, fault tolerance testing remains essential for identifying vulnerabilities, ensuring comprehensive coverage, building confidence in extreme situations, meeting compliance requirements, and mitigating risks. By combining both resilience and fault tolerance approaches, organisations can create robust and reliable systems that can withstand failures and deliver uninterrupted services to users.</Typography>
       </Paper>
     </Container>
-
+    <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', paddingBottom: '20px' }}>
+    <a href="/canary-releases"> <Button>INTRODUCTION TO CANARY RELEASES,CANARY CHANGES AND CANARY DEVELOPMENT</Button> </a>
+    </Container>
     {/* Form */}
-    <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>
+    {/* <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>
      <form ref={form} onSubmit={sendEmail} >
      <p><b style={{fontSize:'20px'}}>Post a comment :</b></p>
       <label>Name</label>
@@ -105,7 +107,20 @@ function SLO() {
       <textarea name="message" />
       <input class='button' type="submit" value="Send" />
     </form>
-   </Container>
+   </Container> */}
+
+<Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingBottom: '20px' }}>
+      <p style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>Post a comment :</p>
+
+      <a 
+        href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=askus@radush.io" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        style={{ fontSize: '24px', marginTop: '30px', color: 'inherit', textDecoration: 'none' }}
+      >
+        Email us at<b> askus@radush.io</b>
+      </a>
+    </Container>
 
     </div>
     </>

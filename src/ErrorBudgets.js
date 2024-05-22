@@ -13,7 +13,7 @@
 
 import React, { useState,useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { Paper, Typography, Container, Box } from '@mui/material';
+import { Paper, Typography, Container, Box ,Button} from '@mui/material';
 import pexels from './assets/pexels-polina.jpg'; // Importing the image
 import callCenterImage from './assets/call-center.png'; // Importing the image
 
@@ -75,9 +75,11 @@ function  ErrorBudgets() {
       
       </Paper>
     </Container>
-
+    <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', paddingBottom: '20px' }}>
+    <a href="/fault-tolerance"> <Button>IS FAULT TOLERANCE TESTING NECESSARY WHEN RESILIENCE IS IN PLACE?</Button> </a>
+    </Container>
       {/* Form */}
-      <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>
+      {/* <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>
      <form ref={form} onSubmit={sendEmail} >
      <p><b style={{fontSize:'20px'}}>Post a comment :</b></p>
       <label>Name</label>
@@ -88,6 +90,19 @@ function  ErrorBudgets() {
       <textarea name="message" />
       <input class='button' type="submit" value="Send" />
     </form>
+    </Container> */}
+
+<Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingBottom: '20px' }}>
+      <p style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>Post a comment :</p>
+
+      <a 
+        href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=askus@radush.io" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        style={{ fontSize: '24px', marginTop: '30px', color: 'inherit', textDecoration: 'none' }}
+      >
+        Email us at<b> askus@radush.io</b>
+      </a>
     </Container>
     </div>
   );

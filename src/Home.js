@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Typography, Grid } from "@mui/material";
@@ -12,6 +13,22 @@ import officeBuildingImage from "./assets/office-building-q4i5wygbi2h3068rajo6d2
 import timelineImage from "./assets/timeline-q4i616q6989j903kldhqkznfug0yff40i23h7xywa0.png";
 import meetingImage from "./assets/meeting-1-q4i64tdqn78e2stsefyvpkoif04z5cipc0ryxel694.png";
 import { Link, useNavigate } from "react-router-dom";
+=======
+import React from 'react';
+import Carousel from 'react-material-ui-carousel';
+import { Paper, Typography, Grid } from '@mui/material';
+import './App.css'; // Import your CSS file for styling
+import image1 from './assets/Product-Engineering.png';
+import image2 from './assets/Partnering for Success - 1.jpg';
+import image3 from './assets/Consulting Services.jpg';
+import image4 from './assets/Training Services (1).jpg';
+import image5 from './assets/cloud.jpeg';
+import image6 from './assets/ESG.jpg';
+import officeBuildingImage from './assets/office-building-q4i5wygbi2h3068rajo6d22rm0vhsgbhx4eth48oa0.png';
+import timelineImage from './assets/timeline-q4i616q6989j903kldhqkznfug0yff40i23h7xywa0.png';
+import meetingImage from './assets/meeting-1-q4i64tdqn78e2stsefyvpkoif04z5cipc0ryxel694.png';
+import { Link, useNavigate } from 'react-router-dom';
+>>>>>>> da2b323501200131d3ffb81e05531c8ed80ba891
 
 const items = [
   {
@@ -86,6 +103,7 @@ const Home = () => {
               <Grid item>
                 <div className="service1-item-container">
                   <img src={image1} alt="Service 1" className="service-image" />
+<<<<<<< HEAD
                   <Typography
                     variant="body1"
                     align="center"
@@ -97,6 +115,9 @@ const Home = () => {
                   >
                     Software solutions and Product re-engineering
                   </Typography>
+=======
+                  <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}> Product engineering</Typography>
+>>>>>>> da2b323501200131d3ffb81e05531c8ed80ba891
                 </div>
               </Grid>
               <Grid item>
@@ -154,6 +175,7 @@ const Home = () => {
               <Grid item>
                 <div className="service1-item-container">
                   <img src={image5} alt="Service 5" className="service-image" />
+<<<<<<< HEAD
                   <Typography
                     variant="body1"
                     align="center"
@@ -165,6 +187,9 @@ const Home = () => {
                   >
                     Embedded Systems
                   </Typography>
+=======
+                  <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}>Cloud</Typography>
+>>>>>>> da2b323501200131d3ffb81e05531c8ed80ba891
                 </div>
               </Grid>
             </Grid>

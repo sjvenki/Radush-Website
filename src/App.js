@@ -44,7 +44,8 @@ import FalsePositives from "./FalsePositives";
 import BreakingDownSilos from "./BreakingDownSilos";
 import RealWorldSimulation from "./RealWorldSimulation";
 import DevOps from "./DevOps";
-import { Container } from "@mui/material";
+import Products from "./Products";
+
 import "./App.css";
 // import SLO from './SLO';
 // import ErrorBudgets from './ErrorBudgets';
@@ -60,6 +61,7 @@ function App() {
           <Route path="/*" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/product" element={<Products />} />
 
           <Route path="/global-presence" element={<GlobalPresence />} />
           <Route path="/contact" element={<Contact />} />
@@ -82,6 +84,7 @@ function App() {
             element={<RealWorldSimulation />}
           />
           <Route path="/dev-ops" element={<DevOps />} />
+
           {/* Define routes for other pages/components as needed */}
         </Routes>
       </Container>

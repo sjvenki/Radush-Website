@@ -37,7 +37,7 @@ import image1 from './assets/Product-Engineering.png';
 import image2 from './assets/Partnering for Success.jpg';
 import image3 from './assets/Consulting Services.jpg';
 import image4 from './assets/Training Services.jpg';
-import image5 from './assets/Embeded Systems.jpg';
+import image5 from './assets/cloud.jpeg';
 import image6 from './assets/ESG.jpg';
 
 
@@ -62,7 +62,7 @@ const Services = () => {
             <Grid item>
               <div className="service1-item-container">
                 <img src={image1} alt="Service 1" className="service-image" />
-                <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}>Software solutions and Product re-engineering</Typography>
+                <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}> Product engineering</Typography>
                 <ul>
                   <li >Consult</li>
                   <li>Design</li>
@@ -111,7 +111,7 @@ const Services = () => {
                 <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}>ESG</Typography>
                 <ul>
                   <li>Carbon Reporting</li>
-                  <li>Carbon Trading</li>
+                  {/* <li>Carbon Trading</li> */}
                   <li>CDP Reporting</li>
                   <li>Sustainbility Reports</li>
                   <li>Stakeholder Management Reports</li>
@@ -122,7 +122,7 @@ const Services = () => {
             <Grid item>
               <div className="service1-item-container">
                 <img src={image5} alt="Service 5" className="service-image" />
-                <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}>Embedded Systems</Typography>
+                <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}>Cloud</Typography>
                 <ul >
                   <li>Full stack training</li>
                   <li>Integrated LMS</li>

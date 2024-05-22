@@ -11,11 +11,11 @@ const Contact = () => {
       <Typography variant='h6'><strong>askus@radush.io</strong></Typography>
       <div>
         <Typography variant='h6' sx={{marginTop:'20px'}}><strong>Our Locations</strong></Typography>
-      <Typography variant='h6'><strong>India
+      <Typography variant='h6'><strong>India :- +91 6366094725
 </strong> </Typography>
-      <Typography variant='h6'><strong>Singapore
+      <Typography variant='h6'><strong>Singapore :- +65 80623768
 </strong></Typography>
-      <Typography variant='h6'><strong>USA</strong></Typography>
+      <Typography variant='h6'><strong>USA :- +1 857 444 4845</strong></Typography>
       </div>
      
     </div>

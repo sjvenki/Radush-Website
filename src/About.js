@@ -3,7 +3,7 @@ import {
   Typography,
   Paper,
   Grid,
-  container,
+  Container,
   Card,
   CardActionArea,
   CardMedia,
@@ -131,15 +131,11 @@ const About = () => {
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    height="260"
+                    height="290"
                     image={Ramesh1Image}
                     alt="ramesh"
                     loading="lazy"
-                    sx={{
-                      objectFit: "contain",
-                      marginTop: "4px",
-                      marginBottom: "4px",
-                    }}
+                    //  sx={{objectFit:'contain'}}
                   />
                   <CardContent style={{ background: "#CACFE0" }}>
                     <Typography
@@ -177,14 +173,21 @@ const About = () => {
               ></Typography>
               <ul style={{ fontSize: "20px" }}>
                 <li>
-                  a visionary techno-functional operations leader renowned for
+                  A visionary techno-functional operations leader renowned for
                   his innovative business strategies and client-centric
                   solutions that enhance margins and drive cost reductions
                 </li>
                 <li>
                   With a distinguished track record in transforming global
                   operational systems profitably and efficiently, Ramesh is the
-                  technical force behindQRCode4you.com.
+                  technical force behind{" "}
+                  <a
+                    href="https://qrcode4you.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <b> QRCode4you.com.</b>
+                  </a>{" "}
                 </li>
                 <li>
                   His extensive expertise spans building profitable startup
@@ -401,6 +404,76 @@ const About = () => {
                   </CardContent>
                 </CardActionArea>
               </Card>
+            </Grid>
+            <Grid item md={8} xs={12}>
+              <Typography
+                variant="h6"
+                style={{
+                  marginBottom: "10px",
+                  fontWeight: "bold",
+                  color: "black",
+                }}
+              ></Typography>
+              <Typography
+                variant="body1"
+                style={{
+                  marginBottom: "10px",
+                  fontWeight: "bold",
+                  color: "black",
+                  fontSize: "14px",
+                }}
+              >
+                {" "}
+              </Typography>
+              <li style={{ marginLeft: "20px", fontSize: "20px" }}>
+                {" "}
+                A seasoned entrepreneur and consultant from West Sussex, UK.
+                With over three decades of expertise spanning commercial
+                advertising, ICT, and end-users' solutions, he's the driving
+                force behind Adventure Holdings Pte Ltd, Singapore, where he
+                serves as Managing Director. Rangesh boasts extensive experience
+                in marketing products across Southeast Asia, with a focus on
+                Singapore, Malaysia, and South Korea.
+              </li>
+              <li style={{ marginLeft: "20px", fontSize: "20px" }}>
+                In 2020, he ventured into Ghana with the establishment of M
+                Ticket, a pioneering mobile phone service provider facilitating
+                payments through text messages using Mobile Money & Mobile
+                Wallet. Rangesh's adept leadership has not only propelled M
+                Ticket's success but also led to the inception of DiGi Ticket in
+                Nigeria, a revolutionary mobile ticketing solution{" "}
+                <a
+                  href="https://www.digiticket.com.ng/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <b> www.digiticket.com.ng.</b>
+                </a>
+              </li>
+              <li style={{ marginLeft: "20px", fontSize: "20px" }}>
+                In 2023, Rangesh conceptualised the versatile use of QR Codes,
+                culminating in the launch of{" "}
+                <a
+                  href="https://qrcode4you.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <b> www.qrcode4you.com.</b>
+                </a>{" "}
+                , a Singapore-based company. Collaborating with Radush
+                Technologies in Bangalore and Singapore, along with Vanessa
+                Busek in the UK, he orchestrated this innovative venture.
+              </li>
+              <li style={{ marginLeft: "20px", fontSize: "20px" }}>
+                Rangesh is constantly pioneering groundbreaking innovations. His
+                next endeavor is focusing on Parking & Tracking solutions
+                utilising QR codes, targeted to the African market. His
+                visionary approach, coupled with unwavering determination and
+                passion for expansion, continues to redefine the landscape of
+                technological solutions worldwide.
+              </li>
+
+              {/* </div> */}
             </Grid>
             <Grid item md={8} xs={12}>
               <Typography
