@@ -19,9 +19,11 @@ const navigate = useNavigate();
       {/* <div className="footer-section">
        */}
         <Typography variant="h5" className="footer-heading">Services</Typography>
-       <Typography variant="body1" className="footer-item"><a href="/services">Software solutions & Product re-engineering</a></Typography>
+       <Typography variant="body1" className="footer-item"><a href="/services">  Product engineering</a></Typography>
         <Typography variant="body1" className="footer-item"><a href="/services">Consulting</a></Typography>
         <Typography variant="body1" className="footer-item"><a href="/services">Training</a></Typography>
+        <Typography variant="body1" className="footer-item"><a href="/services">ESG</a></Typography>
+        <Typography variant="body1" className="footer-item"><a href="/services">Cloud</a></Typography>
         {/* </div> */}
      </Grid>
      <Grid item xs={12} md={3} sx={{marginTop:'20px', textAlign:'left',}}>

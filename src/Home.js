@@ -3,10 +3,10 @@ import Carousel from 'react-material-ui-carousel';
 import { Paper, Typography, Grid } from '@mui/material';
 import './App.css'; // Import your CSS file for styling
 import image1 from './assets/Product-Engineering.png';
-import image2 from './assets/Partnering for Success.jpg';
+import image2 from './assets/Partnering for Success - 1.jpg';
 import image3 from './assets/Consulting Services.jpg';
-import image4 from './assets/Training Services.jpg';
-import image5 from './assets/Embeded Systems.jpg';
+import image4 from './assets/Training Services (1).jpg';
+import image5 from './assets/cloud.jpeg';
 import image6 from './assets/ESG.jpg';
 import officeBuildingImage from './assets/office-building-q4i5wygbi2h3068rajo6d22rm0vhsgbhx4eth48oa0.png';
 import timelineImage from './assets/timeline-q4i616q6989j903kldhqkznfug0yff40i23h7xywa0.png';
@@ -75,7 +75,7 @@ const Home = () => {
               <Grid item>
                 <div className="service1-item-container">
                   <img src={image1} alt="Service 1" className="service-image" />
-                  <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}>Software solutions and Product re-engineering</Typography>
+                  <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}> Product engineering</Typography>
                 </div>
               </Grid>
               <Grid item>
@@ -103,7 +103,7 @@ const Home = () => {
               <Grid item>
                 <div className="service1-item-container">
                   <img src={image5} alt="Service 5" className="service-image" />
-                  <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}>Embedded Systems</Typography>
+                  <Typography variant="body1" align="center" style={{ color: 'black', fontWeight: 'bold',fontSize:'18px' }}>Cloud</Typography>
                 </div>
               </Grid>
             </Grid>

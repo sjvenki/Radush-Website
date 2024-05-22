@@ -93,6 +93,9 @@ const Navbar = () => {
                 <Link to="/about" style={{ textDecoration: 'none', color: 'black' }}>About</Link>
               </MenuItem>
               <MenuItem onClick={handleMenuClose}>
+                <Link to="/product" style={{ textDecoration: 'none', color: 'black' }}>Products</Link>
+              </MenuItem>
+              <MenuItem onClick={handleMenuClose}>
                 <Link to="/services" style={{ textDecoration: 'none', color: 'black' }}>Services</Link>
               </MenuItem>
               <MenuItem onClick={handleMenuClose}>
@@ -113,6 +116,9 @@ const Navbar = () => {
             </Typography>
             <Typography variant="h6" className="navbar-item" style={{ marginRight: '40px', color: 'black' }}>
               <Link to="/about" style={{ textDecoration: 'none', color: 'black' }}>About</Link>
+            </Typography>
+            <Typography variant="h6" className="navbar-item" style={{ marginRight: '40px', color: 'black' }}>
+              <Link to="/product" style={{ textDecoration: 'none', color: 'black' }}>Products</Link>
             </Typography>
             <Typography variant="h6" className="navbar-item" style={{ marginRight: '40px', color: 'black' }}>
               <Link to="/services" style={{ textDecoration: 'none', color: 'black' }}>Services</Link>
