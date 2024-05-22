@@ -4,7 +4,7 @@ import officeImage from './assets/About-us.jpg'; // Import the image from the as
 import overTheYearsImage from './assets/Over the years.jpg'; // Import the image for "Over the years" section
 import Ramesh1Image from './assets/Ramesh1.png';
 import rameshImage from './assets/Sudha Thodur .png';
-import sjImage from './assets/sj.jpeg'; 
+import sjImage from './assets/sj1.jpeg'; 
 import kalyanImage from './assets/Rangesh.png';
 import mehendranathImage from './assets/Vanessa.jpeg';
 import divyaImage from './assets/divya.png';
