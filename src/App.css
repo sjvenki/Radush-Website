@@ -89,8 +89,17 @@
   padding: 20px;
 }
 
+.gridImg{
+  display: flex;
+  justify-content: center;
+}
+
+li{
+  font-size: 20px;
+}
 .footer-logo {
-  width: 150px; 
+  width: 80%;
+  height: auto; 
 }
 /* 
 .footer-section {
@@ -161,8 +170,7 @@
 
 
  .Content-background {
-  position: relative;
-  overflow: hidden;
+  padding:10%;
   background-image: linear-gradient(135deg, #FFFFFF 7%, #F5CD2A 100%);
 }
 
@@ -173,8 +181,7 @@
   align-items: center;
   text-align: center;
   position: relative;
-  border-radius: 8px;
-  padding: 16px;
+  border-radius: 2px;
   transition: box-shadow 0.3s ease;
 }
 
@@ -185,13 +192,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 8px;
+  border-radius: 2px;
   background-color: white; /* Background color inside the box shadow */
   z-index: -1;
 }
 
 .service-item-container:hover {
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.496); /* Adjust the values for hover effect */
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.496); /* Adjust the values for hover effect */
 }
 
 
