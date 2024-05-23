@@ -18,20 +18,22 @@ const Footer = () => {
           <Typography variant="h5" className="footer-heading">
             Services
           </Typography>
-          <Typography variant="body1" className="footer-item">
-            <a href="/services"> Product engineering</a>
+
+          <Typography variant="body1">
+            <Link to="/services">Product engineering</Link>
           </Typography>
-          <Typography variant="body1" className="footer-item">
-            <a href="/services">Consulting</a>
+
+          <Typography variant="body1">
+            <Link to="/services">Consulting</Link>
           </Typography>
-          <Typography variant="body1" className="footer-item">
-            <a href="/services">Training</a>
+          <Typography variant="body1">
+            <Link to="/services">Training</Link>
           </Typography>
-          <Typography variant="body1" className="footer-item">
-            <a href="/services">ESG</a>
+          <Typography variant="body1">
+            <Link to="/services">ESG</Link>
           </Typography>
-          <Typography variant="body1" className="footer-item">
-            <a href="/services">Cloud</a>
+          <Typography variant="body1">
+            <Link to="/services">Cloud</Link>
           </Typography>
           {/* </div> */}
         </Grid>
@@ -40,14 +42,14 @@ const Footer = () => {
           <Typography variant="h5" className="footer-heading">
             About
           </Typography>
-          <Typography variant="body1" className="footer-item">
-            <a href="/about">Company Profile</a>
+          <Typography variant="body1">
+            <Link to="/about">Company Profile</Link>
           </Typography>
-          <Typography variant="body1" className="footer-item">
-            <a href="/about">Company History</a>
+          <Typography variant="body1">
+            <Link to="/about">Company History</Link>
           </Typography>
-          <Typography variant="body1" className="footer-item">
-            <a href="/about">Our Resources</a>
+          <Typography variant="body1">
+            <Link to="/about">Our Resources</Link>
           </Typography>
           {/* </div> */}
         </Grid>
@@ -57,15 +59,15 @@ const Footer = () => {
           <Typography variant="h5" className="footer-heading">
             Links
           </Typography>
-          <Typography variant="body1" className="footer-item">
-            <a href="/terms-conditions">Terms & Conditions</a>
+          <Typography variant="body1">
+            <Link to="/terms-conditions">Terms & Conditions</Link>
           </Typography>
-          {/* <Typography variant="body1" className="footer-item" onClick ={()=>navigate("/terms-conditions")}>Terms & Conditions</Typography> */}
-          <Typography variant="body1" className="footer-item">
-            <a href="/privacy-statement">Privacy Statement</a>
+          {/* <Typography variant="body1"  onClick ={()=>navigate("/terms-conditions")}>Terms & Conditions</Typography> */}
+          <Typography variant="body1">
+            <Link to="/privacy-statement">Privacy Statement</Link>
           </Typography>
-          <Typography variant="body1" className="footer-item">
-            <a href="/refund-policy">Refund and Cancellation Policy</a>
+          <Typography variant="body1">
+            <Link to="/refund-policy">Refund and Cancellation Policy</Link>
           </Typography>
           {/* </div>
            */}

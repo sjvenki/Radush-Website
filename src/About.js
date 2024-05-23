@@ -27,8 +27,8 @@ const About = () => {
         alt="Office"
         style={{
           width: "100%",
-          height: "600px",
-          maxHeight: "90vh",
+          height: "auto",
+          maxHeight: "70vh",
           objectFit: "cover",
         }}
       />
