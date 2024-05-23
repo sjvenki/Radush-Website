@@ -5,7 +5,7 @@ import "./App.css"; // Import your CSS file for styling
 import image1 from "./assets/Product-Engineering.png";
 import image2 from "./assets/Partnering for Success - 1.jpg";
 import image3 from "./assets/Consulting Services.jpg";
-import image4 from "./assets/traingingservices.png";
+import image4 from "./assets/training.png";
 import image5 from "./assets/cloud.jpeg";
 import image6 from "./assets/ESG.jpg";
 import officeBuildingImage from "./assets/office-building-q4i5wygbi2h3068rajo6d22rm0vhsgbhx4eth48oa0.png";
