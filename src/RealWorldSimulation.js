@@ -10,6 +10,7 @@
 
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { Link } from "react-router-dom";
 import { Paper, Typography, Container, Box, Button } from "@mui/material";
 import softwaretestingImage from "./assets/software-testing.jpg"; // Importing the image
 import magnifyingglassImage from "./assets/magnifying-glass.png"; // Importing the image
@@ -255,12 +256,12 @@ function RealWorldSimulation() {
           paddingBottom: "20px",
         }}
       >
-        <a href="/dev-ops">
+        <Link to="/dev-ops">
           {" "}
           <Button>
             DEV = VELOCITY OF RELEASE, OPS = RELIABILITY AND STABILITY
           </Button>{" "}
-        </a>
+        </Link>
       </Container>
       {/* Form */}
       {/* <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>

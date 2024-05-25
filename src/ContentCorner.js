@@ -31,7 +31,7 @@ const ContentCorner = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} md={4} className="service-item-container">
           <Card sx={{ maxWidth: "80%" }}>
-            <a href="/slo">
+            <Link to="/slo">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -48,12 +48,12 @@ const ContentCorner = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-            </a>
+            </Link>
           </Card>
         </Grid>
         <Grid item xs={12} md={4} className="service-item-container">
           <Card sx={{ maxWidth: "80%" }}>
-            <a href="/error-budgets">
+            <Link to="/error-budgets">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -70,12 +70,12 @@ const ContentCorner = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-            </a>
+            </Link>
           </Card>
         </Grid>
         <Grid item xs={12} md={4} className="service-item-container">
           <Card sx={{ maxWidth: "80%" }}>
-            <a href="/fault-tolerance">
+            <Link to="/fault-tolerance">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -92,12 +92,12 @@ const ContentCorner = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-            </a>
+            </Link>
           </Card>
         </Grid>
         <Grid item xs={12} md={4} className="service-item-container">
           <Card sx={{ maxWidth: "80%" }}>
-            <a href="/canary-releases">
+            <Link to="/canary-releases">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -113,12 +113,12 @@ const ContentCorner = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-            </a>
+            </Link>
           </Card>
         </Grid>
         <Grid item xs={12} md={4} className="service-item-container">
           <Card sx={{ maxWidth: "80%" }}>
-            <a href="/framing-error-budgets">
+            <Link to="/framing-error-budgets">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -135,12 +135,12 @@ const ContentCorner = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-            </a>
+            </Link>
           </Card>
         </Grid>
         <Grid item xs={12} md={4} className="service-item-container">
           <Card sx={{ maxWidth: "80%" }}>
-            <a href="/false-positives">
+            <Link to="/false-positives">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -157,12 +157,12 @@ const ContentCorner = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-            </a>
+            </Link>
           </Card>
         </Grid>
         <Grid item xs={12} md={4} className="service-item-container">
           <Card sx={{ maxWidth: "80%" }}>
-            <a href="/breaking-down-silos">
+            <Link to="/breaking-down-silos">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -179,12 +179,12 @@ const ContentCorner = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-            </a>
+            </Link>
           </Card>
         </Grid>
         <Grid item xs={12} md={4} className="service-item-container">
           <Card sx={{ maxWidth: "80%" }}>
-            <a href="/real-world-simulation">
+            <Link to="/real-world-simulation">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -200,12 +200,12 @@ const ContentCorner = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-            </a>
+            </Link>
           </Card>
         </Grid>
         <Grid item xs={12} md={4} className="service-item-container">
           <Card sx={{ maxWidth: "80%" }}>
-            <a href="/dev-ops">
+            <Link to="/dev-ops">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -221,7 +221,7 @@ const ContentCorner = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-            </a>
+            </Link>
           </Card>
         </Grid>
       </Grid>

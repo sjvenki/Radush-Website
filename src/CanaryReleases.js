@@ -14,7 +14,7 @@ import { Paper, Typography, Container, Box, Button } from "@mui/material";
 import teamImage from "./assets/team.jpg"; // Importing the image
 import digitizationImage from "./assets/digitization.jpg"; // Importing the image
 import CloudImage from "./assets/cloud-computing.png";
-
+import { Link } from "react-router-dom";
 function CanaryReleases() {
   const form = useRef();
 
@@ -321,12 +321,12 @@ function CanaryReleases() {
           paddingBottom: "20px",
         }}
       >
-        <a href="/framing-error-budgets">
+        <Link to="/framing-error-budgets">
           {" "}
           <Button>
             FRAMING ERROR BUDGET POLICIES: BALANCING RELIABILITY AND INNOVATION
           </Button>{" "}
-        </a>
+        </Link>
       </Container>
       {/* Form */}
       {/* <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>

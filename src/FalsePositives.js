@@ -13,7 +13,7 @@ import emailjs from "@emailjs/browser";
 import { Paper, Typography, Container, Box, Button } from "@mui/material";
 import teamworkImage from "./assets/team-work.png"; // Importing the image
 import planImage from "./assets/plan.jpg"; // Importing the image
-
+import { Link } from "react-router-dom";
 function FalsePositives() {
   const form = useRef();
 
@@ -183,13 +183,13 @@ function FalsePositives() {
           paddingBottom: "20px",
         }}
       >
-        <a href="/breaking-down-silos">
+        <Link to="/breaking-down-silos">
           {" "}
           <Button>
             BREAKING DOWN SILOS: DEVOPS, COLLABORATION, SRE PRACTICES, AND
             SHARED OWNERSHIPS
           </Button>{" "}
-        </a>
+        </Link>
       </Container>
       {/* Form */}
       {/* <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>

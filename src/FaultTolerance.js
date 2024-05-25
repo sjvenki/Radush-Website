@@ -13,7 +13,7 @@ import emailjs from "@emailjs/browser";
 import { Paper, Typography, Container, Box, Button } from "@mui/material";
 import alexImage from "./assets/alex-shute.jpg"; // Importing the image
 import callCenterImage from "./assets/roberto-cortese.jpg"; // Importing the image
-
+import { Link } from "react-router-dom";
 function SLO() {
   const form = useRef();
 
@@ -238,13 +238,13 @@ function SLO() {
             paddingBottom: "20px",
           }}
         >
-          <a href="/canary-releases">
+          <Link to="/canary-releases">
             {" "}
             <Button>
               INTRODUCTION TO CANARY RELEASES,CANARY CHANGES AND CANARY
               DEVELOPMENT
             </Button>{" "}
-          </a>
+          </Link>
         </Container>
         {/* Form */}
         {/* <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>

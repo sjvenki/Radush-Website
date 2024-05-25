@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { Paper, Typography, Container, Box, Button } from "@mui/material";
 import charlesdeluvioImage from "./assets/charlesdeluvio.jpg"; // Importing the image
 import alexanderImage from "./assets/alexander.jpg"; // Importing the image
-
+import { Link } from "react-router-dom";
 function SLO() {
   const form = useRef();
 
@@ -199,13 +199,13 @@ function SLO() {
           paddingBottom: "20px",
         }}
       >
-        <a href="/false-positives">
+        <Link to="/false-positives">
           {" "}
           <Button>
             FALSE POSITIVES VS. NO ALERTS: NAVIGATING SOFTWARE DEVELOPMENT FOR
             NEWCOMERS
           </Button>{" "}
-        </a>
+        </Link>
       </Container>
       {/* Form */}
       {/* <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>

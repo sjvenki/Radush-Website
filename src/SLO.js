@@ -10,6 +10,7 @@
 
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { Link } from "react-router-dom";
 import {
   Paper,
   Typography,
@@ -188,13 +189,13 @@ function SLO() {
           paddingBottom: "20px",
         }}
       >
-        <a href="/error-budgets">
+        <Link to="/error-budgets">
           {" "}
           <Button>
             UNDERSTANDING ERROR BUDGETS AND THEIR ROLE IN DEFINING SERVICE LEVEL
             OBJECTIVES
           </Button>{" "}
-        </a>
+        </Link>
       </Container>
 
       {/* Form */}
@@ -211,9 +212,9 @@ function SLO() {
     </form>
     <p><b style={{fontSize:'20px'}}>Post a comment :</b></p>
 
-     <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=askus@radush.io" target="_blank" rel="noopener noreferrer">
+     <Link to="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=askus@radush.io" target="_blank" rel="noopener noreferrer">
       <b style={{fontSize:'20px',marginTop:'30px'}}>  Email us at askus@radush.io</b>
-      </a>
+      </Link>
 
     </Container> */}
 

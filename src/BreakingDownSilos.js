@@ -14,7 +14,7 @@ import { Paper, Typography, Container, Box, Button } from "@mui/material";
 import teamImage from "./assets/team.jpg"; // Importing the image
 import pexelsjonassvidrasImage from "./assets/pexels-jonas-svidras.jpg"; // Importing the image
 import pexelsnemuelseretiImage from "./assets/pexels-nemuel-sereti.jpg";
-
+import { Link } from "react-router-dom";
 function CanaryReleases() {
   const form = useRef();
 
@@ -307,10 +307,10 @@ function CanaryReleases() {
           paddingBottom: "20px",
         }}
       >
-        <a href="/real-world-simulation">
+        <Link to="/real-world-simulation">
           {" "}
           <Button>THE NEED FOR REAL-WORLD SIMULATION</Button>{" "}
-        </a>
+        </Link>
       </Container>
       {/* Form */}
       {/* <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>

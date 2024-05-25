@@ -184,10 +184,10 @@ const Home = () => {
           <Grid item xs={12}>
             <div className="about-us-container">
               <div className="about-us-image">
-                <a href="/about">
+                <Link to="/about">
                   {" "}
                   <img src={officeBuildingImage} alt="Office Building" />
-                </a>
+                </Link>
                 <Typography
                   variant="body1"
                   align="center"
@@ -202,10 +202,10 @@ const Home = () => {
                 </Typography>
               </div>
               <div className="about-us-image">
-                <a href="/about">
+                <Link to="/about">
                   {" "}
                   <img src={timelineImage} alt="Timeline" />
-                </a>
+                </Link>
                 <Typography
                   variant="body1"
                   align="center"
@@ -220,10 +220,10 @@ const Home = () => {
                 </Typography>
               </div>
               <div className="about-us-image">
-                <a href="/about">
+                <Link to="/about">
                   {" "}
                   <img src={meetingImage} alt="Meeting" />
-                </a>
+                </Link>
                 <Typography
                   variant="body1"
                   align="center"

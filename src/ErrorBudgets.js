@@ -13,7 +13,7 @@ import emailjs from "@emailjs/browser";
 import { Paper, Typography, Container, Box, Button } from "@mui/material";
 import pexels from "./assets/pexels-polina.jpg"; // Importing the image
 import callCenterImage from "./assets/call-center.png"; // Importing the image
-
+import { Link } from "react-router-dom";
 function ErrorBudgets() {
   const form = useRef();
 
@@ -165,12 +165,12 @@ function ErrorBudgets() {
           paddingBottom: "20px",
         }}
       >
-        <a href="/fault-tolerance">
+        <Link to="/fault-tolerance">
           {" "}
           <Button>
             IS FAULT TOLERANCE TESTING NECESSARY WHEN RESILIENCE IS IN PLACE?
           </Button>{" "}
-        </a>
+        </Link>
       </Container>
       {/* Form */}
       {/* <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingBottom: '20px' }}>
