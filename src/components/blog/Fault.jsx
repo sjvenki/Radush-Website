@@ -89,6 +89,9 @@ const Fault = () => {
           service disruptions.
         </p>
       </div>
+      <div className="text-heading text-base font-medium flex float-right p-10">
+        <a href="/Develop">INTRODUCTION TO CANARY RELEASES</a>
+      </div>
     </div>
   );
 };

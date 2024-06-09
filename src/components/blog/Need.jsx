@@ -83,6 +83,11 @@ const Need = () => {
           unutilized, it may indicate an opportunity for greater innovation.
         </p>
       </div>
+      <div className="text-heading text-base font-medium flex float-right p-10">
+        <a href="/Velocity">
+          DEV = VELOCITY OF RELEASE, OPS = RELIABILITY AND STABILITY
+        </a>
+      </div>
     </div>
   );
 };

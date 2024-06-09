@@ -71,6 +71,9 @@ const Develop = () => {
           smoother transition.
         </p>
       </div>
+      <div className="text-heading text-base font-medium flex float-right p-10">
+        <a href="/Framing">FRAMING ERROR BUDGET POLICIES</a>
+      </div>
     </div>
   );
 };

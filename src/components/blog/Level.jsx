@@ -84,6 +84,9 @@ const Level = () => {
           services, meeting customer expectations.
         </p>
       </div>
+      <div className="text-heading text-base font-medium flex float-right p-10">
+        <a href="/Budget">UNDERSTANDING ERROR BUDGETS THEIR ROLE</a>
+      </div>
     </div>
   );
 };

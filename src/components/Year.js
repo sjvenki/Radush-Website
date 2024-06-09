@@ -22,10 +22,10 @@ export const Years = [
   },
   {
     year: "June 2023",
-    description: `Echyre.`,
+    description: `eC-hyRe,  a campus hiring solution.`,
   },
   {
-    year: "December 2023",
-    description: `QR Innovation.`,
+    year: "March 2024",
+    description: `Launched QRCODE4YOU , QR Products .`,
   },
 ];

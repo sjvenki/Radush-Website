@@ -108,6 +108,9 @@ const Framing = () => {
           customer expectations.
         </p>
       </div>
+      <div className="text-heading text-base font-medium flex float-right p-10">
+        <a href="/Alert">FALSE POSITIVES VS NO ALERTS</a>
+      </div>
     </div>
   );
 };

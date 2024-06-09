@@ -8,20 +8,19 @@ const Footer = () => {
   }, []);
   return (
     <>
-      <div className="bg-footer container mx-auto flex flex-col items-center text-center py-3">
+      <div className="bg-footer container mx-auto flex flex-col items-center text-center py-3 w-full">
         <div className="my-4">
           <h3 className="text-4xl p-4">Radush Technologies</h3>
           <p className="text-2xl font-bold mb-2">
             ISO Certified Company | MICRO, SMALL & MEDIUM ENTERPRISES
           </p>
           <p className="w-full max-w-3xl">
-            We are a startup Product Engineering, Consulting and Training
-            company .In addition we provide business management & Business
-            Relationship management consulting services . We specialize in
-            providing managed services in the areas of service management & SIAM
-            .We specializeCloud Management and Operations can support
-            traditional IT, private or public cloud solutions—across numerous
-            technology vendors.
+            Your Tech Transformation Partner. Founded in 2022, we've grown from
+            training and consulting to a comprehensive solution provider. We
+            empower businesses with cutting-edge technologies and expert
+            guidance. With Global presence in India. Singapore and USA, Radish
+            is your one-stop shop for navigating the ever-changing tech
+            landscape.
           </p>
 
           <div className="flex flex-row gap-4 text-center justify-center my-4">

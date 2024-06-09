@@ -66,7 +66,7 @@ const About = () => {
       </div>
 
       {/* About us section */}
-      <div className="m-20">
+      <div className="m-10">
         <div className="grid md:grid-cols-2 mx-auto container justify-center max-w-screen-xl w-full my-20">
           <div className="flex justify-center items-center">
             <motion.img
@@ -83,7 +83,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 100 }}
               transition={{ duration: 0.5 }}
-              className="text-4xl"
+              className="text-4xl my-5"
             >
               Ramesh Alwan
             </motion.h3>
@@ -127,7 +127,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="bg-about">
+      <div className="bg-about m-10">
         <div className="grid md:grid-cols-2 mx-auto container justify-center max-w-screen-xl w-full my-30 py-10">
           <div>
             <motion.h3
@@ -169,6 +169,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
+              className="mb-10"
             >
               He started off at IBM as an application support lead and moved on
               to head and manage the application support environment for the IBM
@@ -192,7 +193,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 mx-auto container justify-center max-w-screen-xl w-full my-20">
+      <div className="grid md:grid-cols-2 mx-auto container justify-center max-w-screen-xl w-full m-10">
         <div className="flex justify-center items-center">
           <motion.img
             whileInView={{ opacity: 1, x: 0 }}
@@ -203,12 +204,12 @@ const About = () => {
             className="h-64 w-64 box-shadow place-content-center"
           />
         </div>
-        <div>
+        <div className="m-10">
           <motion.h3
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl"
+            className="text-4xl mt-10"
           >
             Sudha M Thodur
           </motion.h3>
@@ -245,8 +246,8 @@ const About = () => {
       </div>
 
       <div className="bg-about">
-        <div className="grid md:grid-cols-2 mx-auto container justify-center max-w-screen-xl w-full my-30 py-10">
-          <div>
+        <div className="grid md:grid-cols-2 mx-auto container justify-center max-w-screen-xl w-full my-30 py-10 ">
+          <div className="m-10">
             <motion.h3
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}

@@ -88,6 +88,9 @@ const Devops = () => {
           <li>3.Empowered Decision-Making</li>
         </ul>
       </div>
+      <div className="text-heading text-base font-medium flex float-right p-10">
+        <a href="/Need">THE NEED FOR REAL-WORLD SIMULATION</a>
+      </div>
     </div>
   );
 };

@@ -12,7 +12,7 @@ import vel from "../assets/vel.jpg";
 const Content = () => {
   return (
     <>
-      <div className="grid md:grid-cols-3 container mx-auto w-full max-w-screen-lg gap-9 my-20 items-center text-center">
+      <div className="grid md:grid-cols-3 container mx-auto w-full max-w-screen-lg gap-9 my-20 justify-center items-center text-center">
         <a href="/Level">
           <div className="shadow-lg p-3 bg-footer">
             <img src={level} />

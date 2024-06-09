@@ -78,6 +78,9 @@ const Alert = () => {
           secure software.
         </p>
       </div>
+      <div className="text-heading text-base font-medium flex float-right p-10">
+        <a href="/Devops">BREAKING DOWN SILOS</a>
+      </div>
     </div>
   );
 };

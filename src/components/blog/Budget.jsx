@@ -70,6 +70,9 @@ const Budget = () => {
           error budget helps you maintain a high level of service reliability.
         </p>
       </div>
+      <div className="text-heading text-base font-medium flex float-right p-10">
+        <a href="/Fault">IS FAULT TOLERANCE TESTING</a>
+      </div>
     </div>
   );
 };

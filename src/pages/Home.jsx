@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <div>
       {/* Banner */}
-      <div className="grid md:grid-cols-2 container mx-auto w-full max-w-screen-lg mt-10 px-2">
+      <div className="grid md:grid-cols-2 container mx-auto w-full max-w-screen-lg mt-2 px-2">
         <div className=" mt-20">
           <motion.p
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,7 +80,7 @@ const Home = () => {
           </a>
         </div>
 
-        <div>
+        <div className="sm:hidden">
           <motion.img
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -115,20 +115,14 @@ const Home = () => {
             transition={{ duration: 0.5 }}
             className="text-base text-center"
           >
-            In the ever growing workforce in the country finding the right
-            skills has always been a challenge. Universities churn out large
-            number of educated candidates year after year but their
-            employability is always under question. Companies continue to look
-            for resources who are readily deployable in projects and or Steady
-            state work.We want to leverage our understanding of people and help
-            value add by joining hands with our clients in the expansion &
-            Transformational journey. Our earlier experiences on this model for
-            a couple of North American client has given us good learnings and we
-            would like to bring those learnings and best practices to fulfill
-            the expectations from our new clients as we move forward in this
-            journey.The train n hire model helps address this skill gap by
-            bringing the Provider and the client together and provides the
-            following benefit to the client
+            Being ahead of the curve is becoming more and more important in the
+            quickly changing world of technology. Utilizing state-of-the-art
+            innovations in three of our critical verticals—product
+            reengineering, technology consulting, and technology training—makes
+            our business unique. We are redefining industries and raising the
+            bar for innovation by concentrating on disruptive technologies like
+            DevOps, DevSecOps, Site Reliability Engineering (SRE), and
+            AI-powered operations (AIops).
           </motion.p>
         </div>
       </div>
@@ -237,7 +231,7 @@ const Home = () => {
         </div>
       </div>
       {/* logo slider */}
-      <h3 className="text-3xl  justify-center flex m-12 mb-10">
+      <h3 className="text-3xl justify-center flex m-12 mb-10 w-full contaainer mx-auto sm:overflow-hidden">
         We Partner With
       </h3>
       <div className="container h-[90px] w-full space-x-4 mx-auto max-w-screen-lg mb-20">
