@@ -75,11 +75,11 @@ const Services = () => {
             providing our clients with a robust and scalable mobile presence.
           </p>
           <ul>
-            <li>1. Full stack </li>
-            <li>2. Frontend </li>
-            <li>3. Backend </li>
-            <li>4. Database </li>
-            <li>5. Web Application</li>
+            <li>1. IOS </li>
+            <li>2. Andriod </li>
+            <li>3. Flutter </li>
+            <li>4. React Native </li>
+            <li>5. xamarin</li>
           </ul>
         </div>
         <div className="shadow-lg p-3 bg-footer">

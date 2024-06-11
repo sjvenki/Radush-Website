@@ -7,7 +7,7 @@ const Products = () => {
   return (
     <div>
       {/* banner */}
-      <div className="  bg-product py-12">
+      <div className="  bg-product py-4">
         <div className="w-full max-w-screen-lg  grid grid-cols-2 container mx-auto ">
           <div>
             <h3 className="text-3xl">Our Product</h3>
