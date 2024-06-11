@@ -78,7 +78,7 @@ const Navbar = () => {
                 <a href="/Contact">Our Global Pressence</a>
               </li>
               <li className=" hover:text-heading">
-                <a href="/Content">Blog</a>
+                <a href="/Content">Content Corner</a>
               </li>
               <a href="/Speak">
                 <button className="btn">Speak to us</button>
