@@ -34,7 +34,7 @@ const Products = () => {
         </div>
         <div>
           <h3 className="text-3xl">QR CODE FOR YOU</h3>
-          <a href="/https://qrcode4you.com/">
+          <a href="https://qrcode4you.com/" target="_blank">
             <p className="text-heading">https://qrcode4you.com</p>
           </a>
           <p className="text-base mt-4">
@@ -59,7 +59,9 @@ const Products = () => {
         <div>
           <h3 className="text-3xl">ecHyre</h3>
           <a href="/https://ecHyre.com/">
-            <p className="text-heading">https://ecHyre.com</p>
+            <p className="text-heading">
+              https://ecHyre.com <b>Coming Soon..</b>
+            </p>
           </a>
           <p className="text-base mt-4">
             We are pioneers in the QR code revolution,dedicated to creating

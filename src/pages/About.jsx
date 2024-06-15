@@ -160,10 +160,14 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="py-2"
             >
-              He started off as a floor engineer at BEML about 35 years ago and
-              moved over to IT after about five years with BEML. After a couple
-              of years in a start-up,, he moved to IBM in 1998 and was with IBM
-              all the way until 2023, when he finally retired.
+              As the CPO & Director, Venkatesh SJ is an ingenious strategist
+              with a proven track record of leading high-performance teams to
+              develop globally recognized products and solutions that drive
+              company growth. As an alumnus of IIMB, having completed both the
+              Advanced Management Program and the Global Business Program at
+              ESADE, Spain, his management acumen intertwined with his
+              engineering prowess positions him as a stellar leader, adept at
+              fostering innovation across diverse countries and cultures.
             </motion.p>
             <motion.p
               whileInView={{ opacity: 1, x: 0 }}
@@ -171,13 +175,10 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="mb-10"
             >
-              He started off at IBM as an application support lead and moved on
-              to head and manage the application support environment for the IBM
-              Global accounts in India. After about twenty years, he moved over
-              to the new product and innovation division at IBM and helped build
-              and roll out new offerings and products in the cloud space, in the
-              service management, integration, AI operations, and data analytics
-              space for IBM.
+              Leveraging over thirty years of experience, he has now embarked on
+              an entrepreneurial journey with his expertise in program
+              management, cloud-based offerings, Infrastructure and application
+              management services.
             </motion.p>
           </div>
           <div className="flex justify-center items-center">

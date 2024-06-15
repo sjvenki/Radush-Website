@@ -34,13 +34,13 @@ const Home = () => {
   return (
     <div>
       {/* Banner */}
-      <div className="grid md:grid-cols-2 container mx-auto w-full max-w-screen-lg mt-2 px-2">
+      <div className="grid md:grid-cols-2 container mx-auto w-full max-w-screen-lg mt-2">
         <div className=" mt-5">
           <motion.p
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
-            className="text-heading text-lg mt-3"
+            className="text-heading text-lg"
           >
             Making Educated Youth Employable
           </motion.p>

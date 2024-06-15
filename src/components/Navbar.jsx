@@ -33,7 +33,7 @@ const Navbar = () => {
               <a href="/Contact">Our Global Pressence</a>
             </li>
             <li className=" hover:text-heading">
-              <a href="/Content">Blog</a>
+              <a href="/Content">Content Corner</a>
             </li>
           </ul>
           <a href="/Speak" className="hidden md:flex">
