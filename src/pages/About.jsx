@@ -5,6 +5,7 @@ import { Years } from "../components/Year";
 import sj from "../assets/sj.jpeg";
 import rakesh from "../assets/rakesh.png";
 import { motion } from "framer-motion";
+import year from "../assets/year.jpg";
 
 const About = () => {
   return (
@@ -314,8 +315,8 @@ const About = () => {
 
       {/* years section */}
       <div className="container mx-auto flex flex-col items-center my-12">
-        <h3 className="text-4xl p-4 text-center">Over the years</h3>
-        {Years.map((year, index) => (
+        {/* <h3 className="text-4xl p-4 text-center">Over the years</h3> */}
+        {/* {Years.map((year, index) => (
           <div key={index} className="flex w-full mb-4 justify-center gap-8">
             <div className="w-1/2 mb-2 text-sm text-right pr-4">
               <motion.p
@@ -336,7 +337,9 @@ const About = () => {
               </motion.p>
             </div>
           </div>
-        ))}
+        ))} */}
+
+        <img src={year} style={{ width: "900px", height: "500px" }} />
       </div>
     </div>
   );

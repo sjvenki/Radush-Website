@@ -104,11 +104,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-footer container mx-auto flex items-center justify-center h-50">
-        <img src={iso} className="w-64 h-64" />
-        <img src={mems} />
-        <img src={iso1} />
-      </div>
+
       <footer className="bg-copy text-center py-5">
         <div className="grid md:grid-cols-2 mx-auto container items-center justify-between">
           <div>

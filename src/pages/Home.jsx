@@ -17,6 +17,9 @@ import nagios from "../assets/nagios.png";
 import spl from "../assets/splunk.png";
 import spr from "../assets/spr.png";
 import taub from "../assets/taub.png";
+import iso from "../assets/iso.png";
+import iso1 from "../assets/iso1.png";
+import mems from "../assets/mems.png";
 
 import { motion } from "framer-motion";
 
@@ -36,6 +39,12 @@ const Home = () => {
       {/* Banner */}
       <div className="grid md:grid-cols-2 container mx-auto w-full max-w-screen-lg mt-2">
         <div className=" mt-5">
+          <div className="flex flex-row gap-2">
+            <img src={iso} style={{ height: "60px", width: "60px" }} />
+
+            <img src={mems} style={{ height: "60px", width: "65px" }} />
+            <img src={iso1} style={{ height: "40px", width: "40px" }} />
+          </div>
           <motion.p
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
@@ -80,12 +89,8 @@ const Home = () => {
           </a>
         </div>
 
-        <div className="sm:hidden">
-          <motion.img
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            src={banner}
-          />
+        <div>
+          <img src={banner} />
         </div>
       </div>
 
