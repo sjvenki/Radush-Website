@@ -264,7 +264,7 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="text-xl text-heading py-1"
             >
-              Ambassador
+              Ambassador - Europe
             </motion.h4>
             {/* <p>
             He comes with about thirty-plus years of rich experience in the
