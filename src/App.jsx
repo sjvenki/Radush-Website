@@ -18,7 +18,7 @@ import Alert from "./components/blog/Alert";
 import Devops from "./components/blog/Devops";
 import Need from "./components/blog/Need";
 import Velocity from "./components/blog/Velocity";
-
+import { Courses, CourseDetails } from "./pages/Training";
 const App = () => {
   return (
     <>
@@ -27,6 +27,9 @@ const App = () => {
         <Navbar />
         <BrowserRouter>
           <Routes>
+            {/* //Courses */}
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/course-details/:id" element={<CourseDetails />} />
             <Route path="/About" element={<About />} />
             <Route path="/" element={<Home />} />
             <Route path="/Products" element={<Products />} />

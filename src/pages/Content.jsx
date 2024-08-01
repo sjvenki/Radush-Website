@@ -15,7 +15,7 @@ const Content = () => {
       <div className="grid md:grid-cols-3 container mx-auto w-full max-w-screen-lg gap-9 my-20 justify-center items-center text-center">
         <a href="/Level">
           <div className="shadow-lg p-3 bg-footer">
-            <img src={level} />
+            <img src={level} className="w-80 h-71 object-cover"/>
 
             <p className="text-base text-gray my-3">
               UNDERSTANDING SLO, SLA, AND SLI: KEY CONCEPTS FOR SERVICE LEVEL
@@ -25,8 +25,8 @@ const Content = () => {
         </a>
 
         <a href="/Budget">
-          <div className="shadow-lg p-3 bg-footer w-60 h-62 object-cover">
-            <img src={error} className="h-full w-full" />
+          <div className="shadow-lg p-3 bg-footer">
+            <img src={error} className="w-80 h-71 object-cover" />
 
             <p className="text-base text-gray my-3">
               UNDERSTANDING ERROR BUDGETS AND THEIR ROLE IN DEFINING SERVICE
@@ -37,7 +37,7 @@ const Content = () => {
 
         <a href="/Fault">
           <div className="shadow-lg p-3 bg-footer">
-            <img src={fault} />
+            <img src={fault} className="w-80 h-71 object-cover"/>
 
             <p className="text-base text-gray my-3">
               IS FAULT TOLERANCE TESTING NECESSARY WHEN RESILIENCE IS IN PLACE?
@@ -48,11 +48,11 @@ const Content = () => {
 
       {/* services -2 */}
 
-      <div className="grid md:grid-cols-3 container mx-auto w-full max-w-screen-lg gap-9 my-20">
+      <div className="grid md:grid-cols-3 container mx-auto w-full max-w-screen-lg gap-9 my-20 justify-center items-center text-center">
         <a href="/Develop">
           {" "}
           <div className="shadow-lg p-3 bg-footer">
-            <img src={dev} />
+            <img src={dev} className="w-80 h-71 object-cover"/>
 
             <p className="text-base text-gray my-3">
               INTRODUCTION TO CANARY RELEASES,CANARY CHANGES AND CANARY
@@ -63,7 +63,7 @@ const Content = () => {
 
         <a href="/Framing">
           <div className="shadow-lg p-3 bg-footer">
-            <img src={framing} />
+            <img src={framing} className="w-80 h-71 object-cover"/>
 
             <p className="text-base text-gray my-3">
               FRAMING ERROR BUDGET POLICIES: BALANCING RELIABILITY AND
@@ -75,7 +75,7 @@ const Content = () => {
         <a href="/Alert">
           {" "}
           <div className="shadow-lg p-3 bg-footer">
-            <img src={alerts} />
+            <img src={alerts} className="w-80 h-71 object-cover"/>
 
             <p className="text-base text-gray my-3">
               FALSE POSITIVES VS. NO ALERTS: NAVIGATING SOFTWARE DEVELOPMENT FOR
@@ -86,10 +86,10 @@ const Content = () => {
       </div>
 
       {/* services -3 */}
-      <div className="grid md:grid-cols-3 container mx-auto w-full max-w-screen-lg gap-9 my-20">
+      <div className="grid md:grid-cols-3 container mx-auto w-full max-w-screen-lg gap-9 my-20 justify-center items-center text-center">
         <a href="/Devops">
           <div className="shadow-lg p-3 bg-footer">
-            <img src={devops} />
+            <img src={devops} className="w-80 h-71 object-cover"/>
 
             <p className="text-base text-gray my-3">
               BREAKING DOWN SILOS: DEVOPS, COLLABORATION, SRE PRACTICES, AND
@@ -100,7 +100,7 @@ const Content = () => {
 
         <a href="/Need">
           <div className="shadow-lg p-3 bg-footer">
-            <img src={need} />
+            <img src={need} className="object-cover w-80 h-48" />
 
             <p className="text-base text-gray my-3">
               THE NEED FOR REAL-WORLD SIMULATION
@@ -109,9 +109,9 @@ const Content = () => {
         </a>
 
         <a href="/Velocity">
-          {" "}
+       
           <div className="shadow-lg p-3 bg-footer">
-            <img src={vel} />
+            <img src={vel} className="w-80 h-71 object-cover"/>
 
             <p className="text-base text-gray my-3">
               DEV = VELOCITY OF RELEASE, OPS = RELIABILITY AND STABILITY

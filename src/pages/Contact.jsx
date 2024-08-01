@@ -9,17 +9,22 @@ const Conatct = () => {
       {/* content */}
       <div className="grid md:grid-cols-3 container mx-auto w-full max-w-screen-lg gap-9 my-20">
         <div>
-          <img src={ban} />
+          <img
+            src={ban}
+            style={{ width: 350, height: 250, objectFit: "cover" }}
+          />
           <p className="text-xl mt-4">Radush Technologies Pvt. Ltd.</p>
-          <p className="text-base"> Wework Prestiege Cube</p>
-          <p className="text-base"> Survey#26, Laskar Hosur Road,</p>
-          <p className="text-base">Adugodi, Koramangala,</p>
-          <p className="text-base"> Bangalore, India-560031</p>
-          <p className="text-base">560031.</p>
+          <p className="text-base"> Alpine Park</p>
+          <p className="text-base"> #C-303, Begur Main Road,</p>
+          <p className="text-base"> Bengaluru</p>
+          <p className="text-base">560068.</p>
           <p className="text-base font-semibold">+91 6366094725</p>
         </div>
         <div>
-          <img src={sin} />
+          <img
+            src={sin}
+            style={{ width: 350, height: 250, objectFit: "cover" }}
+          />
           <p className="text-xl mt-4">Radush Technologies Pte Ltd.</p>
           <p className="text-base"> The Signature,</p>
           <p className="text-base"> 51 Changi Business Park Central</p>
@@ -28,7 +33,10 @@ const Conatct = () => {
           <p className="text-base font-semibold">+65 80623768</p>
         </div>
         <div>
-          <img src={odessa} />
+          <img
+            src={odessa}
+            style={{ width: 350, height: 250, objectFit: "cover" }}
+          />
           <p className="text-xl mt-4">Radush Technologies LLC</p>
           <p className="text-base"> 3200 Living Coral Dr,</p>
           <p className="text-base"> Odessa,</p>
