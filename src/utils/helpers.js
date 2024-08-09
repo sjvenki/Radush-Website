@@ -12,6 +12,15 @@ import CSREP_Badge from "../assets/CSREP_Badge.png";
 import CDSOP_Badge from "../assets/CDSOP_Badge.png";
 import CDSOF__Badge from "../assets/CDSOF__Badge.png";
 
+export const navbarList = [
+  { route: "/About", name: "About us" },
+  { route: "/Services", name: "Services" },
+  { route: "/Products", name: "Products" },
+  { route: "/courses", name: "Courses" },
+  { route: "/Contact", name: "Our Global Pressence" },
+  { route: "/Content", name: "Content Corner" },
+];
+
 export const courseData = [
   {
     courseId: 1,

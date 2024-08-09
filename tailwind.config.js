@@ -19,6 +19,8 @@ export default {
       about: "#f3f4f6",
       product: "#F4D8BD",
       gray: " #808080",
+      textcolor: "#22D3EE",
+      alert: "#EE4B2B",
     },
   },
   plugins: [],

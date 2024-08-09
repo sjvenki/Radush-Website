@@ -18,7 +18,10 @@
     font-display: swap;
     src: url(/fonts/Roboto.woff2) format("woff2");
   }
+  input {
+    @apply w-full border-gray border-[1px] p-1 rounded-md;
+  }
 }
 .btn {
-  @apply rounded-full py-3 px-4 uppercase text-xs font-semibold cursor-pointer text-white bg-primary box-shadow;
+  @apply rounded-full py-2 px-4 uppercase text-sm font-bold cursor-pointer text-white bg-primary box-shadow;
 }

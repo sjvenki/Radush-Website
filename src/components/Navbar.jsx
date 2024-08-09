@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
+import { navbarList } from "../utils/helpers";
+import { userSignOut } from "./functions/authFuntions";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [profile, setProfile] = useState(false);
+  const navigate = useNavigate();
+  const userData = localStorage.getItem("user_name") || "";
 
   const toggle = () => {
     setOpen(!open);
+  };
+
+  const handleProfile = () => {
+    setProfile(!profile);
   };
 
   return (
@@ -18,27 +28,61 @@ const Navbar = () => {
             </a>
           </div>
           <ul className="hidden md:flex space-x-6 font-medium text-lg  ">
-            <li className=" hover:text-heading">
-              <a href="/About">About us</a>
-            </li>
-            <li className=" hover:text-heading">
-              {" "}
-              <a href="/Services">Services</a>
-            </li>
-            <li className=" hover:text-heading">
-              {" "}
-              <a href="/Products">Products</a>
-            </li>
-            <li className=" hover:text-heading">
-              <a href="/Contact">Our Global Pressence</a>
-            </li>
-            <li className=" hover:text-heading">
-              <a href="/Content">Content Corner</a>
-            </li>
+            {navbarList?.map((data, index) => (
+              <li key={index} className=" hover:text-heading">
+                <a href={data.route}>{data.name}</a>
+              </li>
+            ))}
           </ul>
-          <a href="/Speak" className="hidden md:flex">
-            <button className="btn">Speak to us</button>
-          </a>
+          {userData ? (
+            <div className="relative w-10 h-10 rounded-full bg-primary flex justify-center items-center font-bold hover:border-black hover:border-2">
+              <button
+                type="button"
+                className="w-full h-full"
+                onClick={handleProfile}
+              >
+                {userData && userData.charAt(0).toUpperCase()}
+              </button>
+              {profile && (
+                <div className="absolute w-28 bg-white shadow-lg top-11 right-0 rounded-md p-1">
+                  <ul>
+                    <li
+                      onClick={() => {
+                        navigate("/profile");
+                        setProfile(!profile);
+                      }}
+                      className="cursor-pointer hover:bg-sec p-2 w-full"
+                    >
+                      My Profile
+                    </li>
+                    <li
+                      onClick={() => {
+                        userSignOut();
+                        setProfile(!profile);
+                      }}
+                      className="cursor-pointer hover:bg-sec p-2 w-full"
+                    >
+                      Logout
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          ) : (
+            <>
+              <button
+                onClick={() => navigate("/login")}
+                className="hidden md:flex btn"
+              >
+                Login
+              </button>
+
+              <a href="/Speak" className="hidden md:flex">
+                <button className="btn">Speak to us</button>
+              </a>
+            </>
+          )}
+
           <button className="md:hidden" onClick={toggle}>
             <svg
               className="h-10 w-10"
@@ -63,25 +107,18 @@ const Navbar = () => {
         {open && (
           <div className="md:hidden">
             <ul className="flex flex-col space-y-6 font-medium items-center text-lg toggleMenu py-6">
-              <li className=" hover:text-heading">
-                <a href="/About">About us</a>
-              </li>
-              <li className=" hover:text-heading">
-                {" "}
-                <a href="/Services">Services</a>
-              </li>
-              <li className=" hover:text-heading">
-                {" "}
-                <a href="/Products">Products</a>
-              </li>
-              <li className=" hover:text-heading">
-                <a href="/Contact">Our Global Pressence</a>
-              </li>
-              <li className=" hover:text-heading">
-                <a href="/Content">Content Corner</a>
-              </li>
-              <a href="/Speak">
-                <button className="btn">Speak to us</button>
+              {navbarList?.map((data, index) => (
+                <li key={index} className=" hover:bg-primary cursor-pointer">
+                  <a href={data.route}>{data.name}</a>
+                </li>
+              ))}
+              {!userData && (
+                <li className=" hover:bg-primary cursor-pointer">
+                  <a href="/login">Login</a>
+                </li>
+              )}
+              <a href="/Speak" className=" hover:bg-primary cursor-pointer">
+                <button className="">Speak to us</button>
               </a>
             </ul>
           </div>

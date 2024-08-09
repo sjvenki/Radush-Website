@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import banner from "../assets/banner.png";
 import { ReactTyped } from "react-typed";
 import web from "../assets/web.png";
@@ -20,7 +20,6 @@ import taub from "../assets/taub.png";
 import iso from "../assets/iso.png";
 import iso1 from "../assets/iso1.png";
 import mems from "../assets/mems.png";
-
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -34,6 +33,7 @@ const Home = () => {
     autoplaySpeed: 2000,
     cssEase: "linear",
   };
+
   return (
     <div>
       {/* Banner */}
