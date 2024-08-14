@@ -21,6 +21,16 @@
   input {
     @apply w-full border-gray border-[1px] p-1 rounded-md;
   }
+  table {
+    @apply border-collapse w-full;
+  }
+  td,
+  th {
+    @apply border-2 py-4 px-3;
+  }
+  td {
+    @apply text-left;
+  }
 }
 .btn {
   @apply rounded-full py-2 px-4 uppercase text-sm font-bold cursor-pointer text-white bg-primary box-shadow;

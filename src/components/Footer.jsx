@@ -11,7 +11,7 @@ const Footer = () => {
   }, []);
   return (
     <>
-      <div className="bg-footer container mx-auto flex flex-col items-center text-center py-3 w-full">
+      <div className="bg-footer flex flex-col items-center text-center py-3 w-full">
         <div className="my-4">
           <h3 className="text-4xl p-4">Radush Technologies</h3>
           <p className="text-2xl font-bold mb-2">

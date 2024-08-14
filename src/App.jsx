@@ -21,10 +21,11 @@ import Velocity from "./components/blog/Velocity";
 import { Courses, CourseDetails } from "./pages/Training";
 import { Login, Register, ForgotPassword } from "./pages/Auth";
 import Profile from "./pages/Profile";
-
+import Admin from "./pages/Admin";
 const AppRoutes = () => {
   return useRoutes([
     { path: "/login", element: <Login /> },
+    { path: "/admin", element: <Admin /> },
     { path: "/register", element: <Register /> },
     { path: "/forgot-password", element: <ForgotPassword /> },
     { path: "/profile", element: <Profile /> },

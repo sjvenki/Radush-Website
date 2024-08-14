@@ -41,6 +41,7 @@ export const userRegister = async (data) => {
         state: data.state,
         city: data.city,
       },
+      role: "user",
       user_created: Timestamp.fromDate(new Date()),
     });
     if (response) {
@@ -73,14 +74,46 @@ export const userSignOut = () => {
 };
 
 //hooks to check the user already loggin in or not
+
 export const useCheckUser = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const id = localStorage.getItem("user_id") || "";
-    if (id) {
-      navigate("/");
-    }
+    const checkUserRole = async () => {
+      const id = localStorage.getItem("user_id") || "";
+
+      if (!id) {
+        console.log("User Not Logged In");
+        return null;
+      }
+
+      if (id) {
+        try {
+          const response = await getUserData();
+          const { role } = response.data();
+          console.log("userRole", role);
+          const path = window.location.pathname;
+          const isAdminPath = ["/admin"].includes(path);
+          const isAuthPath = [
+            "/login",
+            "/register",
+            "/forgot-password",
+          ].includes(path);
+
+          if (role !== "admin" && isAdminPath) {
+            navigate("/");
+          } else if (role && isAuthPath) {
+            navigate("/");
+          } else {
+            return 1;
+          }
+        } catch (error) {
+          console.error("Error checking user role:", error);
+          navigate("/");
+        }
+      }
+    };
+    checkUserRole();
   }, [navigate]);
 
   return null;

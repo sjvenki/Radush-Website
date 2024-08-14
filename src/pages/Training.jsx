@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { courseData } from "../utils/helpers";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-
+import { toast } from "react-toastify";
+import { userInterested } from "../components/functions/userFunctions";
 export const Courses = () => {
   const navigate = useNavigate();
   const handleNavigate = (course) => {
@@ -47,8 +48,15 @@ export const CourseDetails = () => {
     return alert("no courses selected");
   }
   const course = state.course;
-
-  console.log(course);
+  const handleSubmit = async (data) => {
+    const id = localStorage.getItem("user_id") || "";
+    console.log(id, !id);
+    if (!id) {
+      toast.info("Please Login Before Buying the course");
+      return;
+    }
+    await userInterested(id, data);
+  };
   return (
     <div className="m-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4  pl-1">
@@ -68,6 +76,12 @@ export const CourseDetails = () => {
               {data.intro}
             </li>
           ))}
+          <button
+            onClick={() => handleSubmit(course)}
+            className="px-4 py-2 my-2 rounded text-black font-semibold bg-primary hover:text-white"
+          >
+            I'm Interested
+          </button>
         </div>
       </div>
       <div>

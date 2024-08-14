@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import { navbarList } from "../utils/helpers";
-import { userSignOut } from "./functions/authFuntions";
+import { getUserData, userSignOut } from "./functions/authFuntions";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [profile, setProfile] = useState(false);
+  const [role, setRole] = useState("");
   const navigate = useNavigate();
   const userData = localStorage.getItem("user_name") || "";
 
@@ -17,6 +18,15 @@ const Navbar = () => {
   const handleProfile = () => {
     setProfile(!profile);
   };
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await getUserData();
+      const { role } = response.data();
+      setRole(role);
+    }
+    fetchData();
+  });
 
   return (
     <div className=" bg-nav box-shadow py-3">
@@ -55,6 +65,17 @@ const Navbar = () => {
                     >
                       My Profile
                     </li>
+                    {role == "admin" && (
+                      <li
+                        onClick={() => {
+                          navigate("/admin");
+                          setProfile(!profile);
+                        }}
+                        className="cursor-pointer hover:bg-sec p-2 w-full"
+                      >
+                        Admin
+                      </li>
+                    )}
                     <li
                       onClick={() => {
                         userSignOut();
