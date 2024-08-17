@@ -58,7 +58,7 @@ const Services = () => {
             <p className="text-base text-gray my-3">{data.detail}</p>
             {data.list?.map((li, index) => (
               <p>
-                {index + 1} {li.li}
+                {index + 1}. {li.li}
               </p>
             ))}
           </div>

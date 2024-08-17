@@ -1,5 +1,5 @@
 // image
-import web from "../assets/we1.jpg";
+import ms from "../assets/managedServices.png";
 import mobile from "../assets/mob1.jpg";
 import training from "../assets/tra.jpg";
 import consulting from "../assets/con1.jpg";
@@ -1905,19 +1905,30 @@ export const courseData = [
 
 export const serviceHelper = [
   {
-    image: web,
-    title: `Web Development`,
-    detail: `Our web application development services focus on creating fast,
-            secure, and user-friendly web solutions that drive business growth
-            and innovation.`,
+    image: ms,
+    title: `Managed Services`,
+    detail: `Streamline your operations with our managed services, designed to enhance efficiency and security across your IT environment. Our offerings include:`,
     list: [
-      { li: `Full stack` },
-      { li: `Frontend` },
-      { li: `Backend` },
-      { li: `Database` },
-      { li: `Web Application` },
+      { li: `Network and Security Services` },
+      { li: `Cloud and Data Management` },
+      { li: `Communication Services` },
+      { li: `Software and Application Management` },
     ],
   },
+  // {
+  //   image: web,
+  //   title: `Web Development`,
+  //   detail: `Our web application development services focus on creating fast,
+  //           secure, and user-friendly web solutions that drive business growth
+  //           and innovation.`,
+  //   list: [
+  //     { li: `Full stack` },
+  //     { li: `Frontend` },
+  //     { li: `Backend` },
+  //     { li: `Database` },
+  //     { li: `Web Application` },
+  //   ],
+  // },
   {
     image: mobile,
     title: `Mobile Development`,
@@ -1977,15 +1988,13 @@ export const serviceHelper = [
   {
     image: proEng,
     title: `Product engineering`,
-    detail: `We offer world-class product engineering services, delivering
-            innovative and scalable solutions that meet the unique needs of our
-            clients.`,
+    detail: `We provide end-to-end product engineering services, integrating innovative web development to deliver scalable, high-performance solutions:`,
     list: [
-      { li: `Consult` },
-      { li: `Design` },
-      { li: `Build & Test` },
-      { li: `Maintain & Manage` },
+      { li: `Consultation & Strategy` },
+      { li: `Design & User Experience` },
+      { li: `Development & Testing` },
       { li: `Point Solutions` },
+      { li: `Maintenance & Support` },
     ],
   },
 ];

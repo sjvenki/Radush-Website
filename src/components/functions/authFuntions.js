@@ -84,6 +84,9 @@ export const useCheckUser = () => {
 
       if (!id) {
         console.log("User Not Logged In");
+        if (window.location.pathname == "/admin") {
+          navigate("/");
+        }
         return null;
       }
 
