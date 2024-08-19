@@ -3,14 +3,14 @@ const nodemailer = require("nodemailer");
 exports.transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "qrinnovations.actions@gmail.com",
-    pass: "xzff hzrv xshf pifq",
+    user: "askus@radush.io",
+    pass: "nubn khfp ekzs yyco",
   },
 });
 
 exports.userMailOptions = (name, email, course) => {
   return {
-    from: "qrinnovations.actions@gmail.com",
+    from: "askus@radush.io",
     to: email,
     subject: `Thank you for your interest in ${course}`,
     text: `Dear ${name},
@@ -27,9 +27,9 @@ exports.userMailOptions = (name, email, course) => {
 
 exports.clientMailOptions = (name, email, course) => {
   return {
-    from: "qrinnovations.actions@gmail.com",
-    to: "sj@radush.io",
-    cc: "shakeelabala@radush.io, ramesh.sudha@radush.io",
+    from: "askus@radush.io",
+    to: "shakeelabala@radush.io",
+    cc: "sj@radush.io, ramesh.sudha@radush.io",
     subject: `New Interest in ${course}`,
     text: `Hello Admin,
   
