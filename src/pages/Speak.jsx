@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { userContactMail } from "../components/functions/userFunctions";
 const Speak = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,10 +12,9 @@ const Speak = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission logic here
+    await userContactMail(formData);
   };
 
   return (

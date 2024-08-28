@@ -65,6 +65,7 @@ const Navbar = () => {
                     >
                       My Profile
                     </li>
+
                     {role == "admin" && (
                       <li
                         onClick={() => {
@@ -76,6 +77,15 @@ const Navbar = () => {
                         Admin
                       </li>
                     )}
+                    <li
+                      onClick={() => {
+                        navigate("/Speak");
+                        setProfile(!profile);
+                      }}
+                      className="cursor-pointer hover:bg-sec p-2 w-full"
+                    >
+                      Contact Us
+                    </li>
                     <li
                       onClick={() => {
                         userSignOut();
@@ -99,7 +109,7 @@ const Navbar = () => {
               </button>
 
               <a href="/Speak" className="hidden md:flex">
-                <button className="btn">Speak to us</button>
+                <button className="btn">Contact Us</button>
               </a>
             </>
           )}

@@ -9,12 +9,13 @@ import {
   collection,
   getDocs,
   Timestamp,
+  addDoc,
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
 const USER_INTERESTED_COURSES_COLLECTION = "user_interested_courses";
 const USER_CREDENTIALS_COLLECTION = "user_credentials";
-
+const USER_CONTACT_MAILS = "user_contact";
 const checkExists = (data, userData) => {
   const { courses } = userData;
   return courses.some((course) => course.name === data.courseTitle);
@@ -80,4 +81,13 @@ export const getCourseData = async () => {
   } catch (err) {
     errorHandler(err);
   }
+};
+
+export const userContactMail = async (data) => {
+  const userContact = {
+    user_name: data.name,
+    user_email: data.email,
+    user_message: data.message,
+  };
+  await addDoc(collection(db, USER_CONTACT_MAILS), userContact);
 };
