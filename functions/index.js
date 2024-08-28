@@ -8,7 +8,7 @@
  */
 
 const admin = require("firebase-admin");
-const { onRequest } = require("firebase-functions/v2/https");
+const { onCall, HttpsError } = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
 const {
   onDocumentCreated,
@@ -33,6 +33,7 @@ const sendMail = async (name, email, course) => {
     return;
   }
 };
+
 exports.sendInterestMail = onDocumentCreated(
   "user_interested_courses/{userId}",
   async (event) => {
@@ -51,6 +52,9 @@ exports.sendInterestMailOnUpdate = onDocumentUpdated(
   }
 );
 
+exports.contactUsMail = onCall((request) => {
+  console.log(request);
+});
 // Create and deploy your first functions
 // https://firebase.google.com/docs/functions/get-started
 

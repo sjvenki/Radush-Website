@@ -111,13 +111,13 @@ const Footer = () => {
             <p>&copy; {currentYear} Radush Technology. All rights reserved.</p>
           </div>
           <div>
-            <a href="/terms" className="mr-4 hover:text-heading">
+            <a href="/terms-and-conditions" className="mr-4 hover:text-heading">
               Terms &amp; condition
             </a>
-            <a href="/privacy" className="mr-4 hover:text-heading">
+            <a href="/privacy-policy" className="mr-4 hover:text-heading">
               Privacy Statement
             </a>
-            <a href="/refund" className="hover:text-heading">
+            <a href="/refund-and-cancellation" className="hover:text-heading">
               Refund and Cancellation Policy
             </a>
           </div>

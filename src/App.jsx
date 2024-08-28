@@ -22,8 +22,13 @@ import { Courses, CourseDetails } from "./pages/Training";
 import { Login, Register, ForgotPassword } from "./pages/Auth";
 import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
+import { Terms, Privacy, Refund } from "./pages/Legal";
 const AppRoutes = () => {
+  // Radush Technologies Pvt Ltd
   return useRoutes([
+    { path: "/refund-and-cancellation", element: <Refund /> },
+    { path: "/privacy-policy", element: <Privacy /> },
+    { path: "/terms-and-conditions", element: <Terms /> },
     { path: "/login", element: <Login /> },
     { path: "/admin", element: <Admin /> },
     { path: "/register", element: <Register /> },
