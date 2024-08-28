@@ -8,8 +8,6 @@
  */
 
 const admin = require("firebase-admin");
-const { onRequest } = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
 const {
   onDocumentCreated,
   onDocumentUpdated,
@@ -18,7 +16,9 @@ const {
   transporter,
   clientMailOptions,
   userMailOptions,
+  contactUsMail,
 } = require("./mailFunction");
+const { onRequest } = require("firebase-functions/v2/https");
 admin.initializeApp();
 
 console.log("Log is running");
@@ -51,7 +51,14 @@ exports.sendInterestMailOnUpdate = onDocumentUpdated(
   }
 );
 
-// Create and deploy your first functions
+exports.contactMail = onDocumentCreated(
+  "user_contact/{userId}",
+  async (event) => {
+    const snap = event.data;
+    await transporter.sendMail(contactUsMail(snap.data()));
+  }
+);
+// Create and deploy your firsdatt functions
 // https://firebase.google.com/docs/functions/get-started
 
 // exports.helloWorld = onRequest((request, response) => {

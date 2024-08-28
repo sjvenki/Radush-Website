@@ -12,7 +12,6 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_ID,
   measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
@@ -21,7 +20,8 @@ export const db = getFirestore(app);
 // initializeApp(firebaseConfig);
 // export const auth = getAuth();
 // export const db = getFirestore();
+// export const functions = getFunctions();
 // connectAuthEmulator(auth, "http://127.0.0.1:8090");
 // connectFirestoreEmulator(db, "127.0.0.1", 8085);
-
+// connectFunctionsEmulator(functions, "http://127.0.0.1:8081");
 getAnalytics();

@@ -47,6 +47,24 @@ exports.clientMailOptions = (name, email, course) => {
   };
 };
 
+exports.contactUsMail = (data) => {
+  return {
+    from: "askus@radush.io",
+    to: "shakeelabala@radush.io",
+    cc: "sj@radush.io, ramesh.sudha@radush.io",
+    subject: `Enquiry mail from Radush Website`,
+    text: `Hello Admin,
+  
+  
+  User Details:
+  - Email: ${data.email}
+  - Name: ${data.name}
+  - Message: ${data.message}
+  
+  Please review and follow up accordingly.
+  `,
+  };
+};
 // // try {
 // //   // Send emails
 // //   await transporter.sendMail(userMailOptions);
