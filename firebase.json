@@ -14,29 +14,33 @@
         "firebase-debug.*.log",
         "*.local"
       ],
-      "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint"
-      ]
+      "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run lint"]
     }
   ],
+  "hosting": {
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "app"
+      }
+    ]
+  },
   "emulators": {
     "singleProjectMode": false,
     "auth": {
-      "port": 8090
+      "port": 9099
     },
     "functions": {
-      "port": 8081
+      "port": 5001
     },
     "firestore": {
-      
-      "port": 8085
+      "port": 8080
     },
     "ui": {
       "enabled": true
     },
-
-    "database": {
-      "port": 8093
+    "hosting": {
+      "port": 5000
     }
   }
 }

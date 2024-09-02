@@ -12,6 +12,12 @@ import CSREP_Badge from "../assets/CSREP_Badge.png";
 import CDSOP_Badge from "../assets/CDSOP_Badge.png";
 import CDSOF__Badge from "../assets/CDSOF__Badge.png";
 
+//about us
+import ramesh from "../assets/ramesh.png";
+import sudha from "../assets/sudha.png";
+import sj from "../assets/sj.jpeg";
+import rangesh from "../assets/rakesh.png";
+
 export const navbarList = [
   { route: "/About", name: "About us" },
   { route: "/Services", name: "Services" },
@@ -26,6 +32,7 @@ export const courseData = [
     courseId: 1,
     courseTitle: "Data Science Professional",
     image: CDSP_Badge,
+    coursePrice: 50000,
     introduction: [
       {
         intro:
@@ -371,6 +378,7 @@ export const courseData = [
     courseId: 2,
     courseTitle: "AIOps Foundation",
     image: CAIOPSF_Badge,
+    coursePrice: 50000,
     introduction: [
       {
         intro:
@@ -654,6 +662,7 @@ export const courseData = [
     courseId: 3,
     courseTitle: "Site Reliability Engineering Foundation",
     image: CSREF_Badge,
+    coursePrice: 50000,
     introduction: [
       {
         intro:
@@ -911,6 +920,7 @@ export const courseData = [
     courseId: 4,
     courseTitle: "SRE Practitioner",
     image: CSREP_Badge,
+    coursePrice: 50000,
     introduction: [
       {
         intro:
@@ -1389,6 +1399,7 @@ export const courseData = [
     courseId: 5,
     courseTitle: "DevSecOps Foundation",
     image: CDSOF__Badge,
+    coursePrice: 50000,
     introduction: [
       {
         intro:
@@ -1687,6 +1698,7 @@ export const courseData = [
     courseId: 6,
     courseTitle: "DevSecOps Practitioner",
     image: CDSOP_Badge,
+    coursePrice: 50000,
     introduction: [
       {
         intro:

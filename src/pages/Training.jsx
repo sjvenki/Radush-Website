@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { courseData } from "../utils/helpers";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { userInterested } from "../components/functions/userFunctions";
+import { createsOrder, validatePayment, testingFire } from "../firestoreConfig";
+import useRazorpay from "react-razorpay";
 export const Courses = () => {
   const navigate = useNavigate();
   const handleNavigate = (course) => {
@@ -38,16 +40,33 @@ export const Courses = () => {
 };
 
 export const CourseDetails = () => {
+  const [Razorpay] = useRazorpay();
   const [isOpen, setIsOpen] = useState(false);
   const [openBenefits, setOpenBenefits] = useState(false);
   const [openTarget, setOpenTarget] = useState(false);
   const [openFaq, setOpenFaq] = useState(false);
+  // const [razorpayLoaded, setRazorpayLoaded] = useState(false);
+
   const { state } = useLocation();
   const { id } = useParams();
   if (!state) {
     return alert("no courses selected");
   }
   const course = state.course;
+
+  // useEffect(() => {
+  //   // testingFire();
+  //   if (typeof window.Razorpay !== "undefined") {
+  //     setRazorpayLoaded(true);
+  //   } else {
+  //     const script = document.createElement("script");
+  //     script.src = "https://checkout.razorpay.com/v1/checkout.js";
+  //     script.onload = () => setRazorpayLoaded(true);
+  //     script.onerror = () => console.error("Failed to load Razorpay script");
+  //     document.body.appendChild(script);
+  //   }
+  // }, []);
+
   const handleSubmit = async (data) => {
     const id = localStorage.getItem("user_id") || "";
     console.log(id, !id);
@@ -57,6 +76,77 @@ export const CourseDetails = () => {
     }
     await userInterested(id, data);
   };
+
+  const handleBuy = useCallback(
+    async (event, data) => {
+      event.preventDefault();
+      const id = localStorage.getItem("user_id") || "";
+      console.log(id, !id);
+      if (!id) {
+        toast.info("Please Login Before Buying the course");
+        return;
+      }
+      // if (!razorpayLoaded) {
+      //   console.error("Razorpay SDK is not loaded yet.");
+      //   return;
+      // }
+
+      try {
+        const orderData = {
+          amount: data.coursePrice,
+          notes: {
+            courseName: data.courseTitle,
+            courseId: data.courseId,
+          },
+        };
+        const order = await createsOrder(orderData);
+        console.clear();
+        var options = {
+          // key: import.meta.env.VITE_PAYMENT_KEY,
+          key: "rzp_test_B6bqVWAfF7BjWN",
+          amount: order.data.amount,
+          currency: order.data.currency,
+          name: "Radush Technologies",
+          description: "Test Transaction",
+          image: "https://radush.io/assets/logo-IjrLeoFJ.png",
+          order_id: order.data.orderId,
+          handler: function (res) {
+            const data = {
+              orderId: res.razorpay_order_id,
+              paymentId: res.razorpay_payment_id,
+              signature: res.razorpay_signature,
+              userId: id,
+            };
+            validatePayment(data);
+          },
+          notes: {
+            address: "Radush Technology",
+          },
+          theme: {
+            color: "#f97316",
+          },
+        };
+        const paymentObject = new Razorpay(options);
+
+        // paymentObject.on("payment.failed", function (response) {
+        //   alert(response.error.code);
+        //   alert(response.error.description);
+        //   alert(response.error.source);
+        //   alert(response.error.step);
+        //   alert(response.error.reason);
+        //   alert(response.error.metadata.order_id);
+        //   alert(response.error.metadata.payment_id);
+        // });
+
+        paymentObject.open();
+        console.log(order.data.orderId);
+      } catch (err) {
+        console.error("payment error", err);
+      }
+    },
+    [Razorpay]
+  );
+
   return (
     <div className="m-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4  pl-1">
@@ -76,6 +166,12 @@ export const CourseDetails = () => {
               {data.intro}
             </li>
           ))}
+          {/* <button
+            onClick={(e) => handleBuy(e, course)}
+            className="px-4 py-2 my-2 mr-2 rounded text-black font-semibold bg-primary hover:text-white"
+          >
+            Enroll
+          </button> */}
           <button
             onClick={() => handleSubmit(course)}
             className="px-4 py-2 my-2 rounded text-black font-semibold bg-primary hover:text-white"

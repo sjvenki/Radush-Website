@@ -21,6 +21,7 @@ import iso from "../assets/iso.png";
 import iso1 from "../assets/iso1.png";
 import mems from "../assets/mems.png";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 const Home = () => {
   const settings = {

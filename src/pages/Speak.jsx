@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { userContactMail } from "../components/functions/userFunctions";
+import { toast } from "react-toastify";
 const Speak = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,7 +16,19 @@ const Speak = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await userContactMail(formData);
+    try {
+      console.log("Triggered");
+      await userContactMail(formData);
+      setStatus(true);
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+      toast.success("Your Query is Captured, our team will contact you soon");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -75,7 +89,9 @@ const Speak = () => {
         </div>
 
         <div>
-          <button className="btn">Submit</button>
+          <button className="btn hover:text-black" disabled={status}>
+            Submit
+          </button>
         </div>
       </form>
     </div>
