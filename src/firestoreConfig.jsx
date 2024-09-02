@@ -21,6 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const functions = getFunctions(app);
 
 // initializeApp(firebaseConfig);
 // export const auth = getAuth();
@@ -31,7 +32,7 @@ export const db = getFirestore(app);
 // connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
 // //httpsCallable
-// export const createsOrder = httpsCallable(functions, "createsOrder");
-// export const validatePayment = httpsCallable(functions, "validatePayment");
-// export const testingFire = httpsCallable(functions, "testingFire");
+export const createsOrder = httpsCallable(functions, "createsOrder");
+export const validatePayment = httpsCallable(functions, "validatePayment");
+export const testingFire = httpsCallable(functions, "testingFire");
 getAnalytics();
