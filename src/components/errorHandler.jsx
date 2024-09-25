@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 export const errorHandler = (err) => {
-  console.log(err.code, err.message);
+  console.error(err.code, err.message, err);
 
   switch (err.code) {
     case "auth/user-not-found":

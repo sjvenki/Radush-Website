@@ -3,12 +3,91 @@ import { courseData } from "../utils/helpers";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { userInterested } from "../components/functions/userFunctions";
-import { createsOrder, validatePayment, testingFire } from "../firestoreConfig";
 import useRazorpay from "react-razorpay";
+import { useGetCourses } from "../components/Hooks/dataHooks";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+import { useCourseDialog } from "../components/Hooks/courseHooks";
+// import Button from "../components/ui/Button";
+
+const CourseBatchDetails = ({ open, onClose, batchData, handleEnroll }) => {
+  return (
+    <div className="flex justify-center container max-w-screen-lg bg-opacity-0">
+      <Dialog open={open} handler={onClose} size="xl" className="blur-0">
+        <DialogHeader>
+          <h1 className="text-xl font-bold text-center">Training Batches:</h1>
+        </DialogHeader>
+        <DialogBody>
+          <div className="overflow-x-auto">
+            {batchData.length > 0 ? (
+              <table className="min-w-full">
+                <thead>
+                  <tr>
+                    <th>Batch ID</th>
+                    <th>Course Name</th>
+                    <th>Start Date</th>
+                    <th>Duration</th>
+                    <th>Course Fees</th>
+                    <th>Batch Details</th>
+                    <th>Status</th>
+                    <th>Enroll</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {batchData &&
+                    batchData?.map((batch) => (
+                      <tr key={batch.id}>
+                        <td className="text-center">{batch.batch_id}</td>
+                        <td className="text-center">{batch.course_name}</td>
+                        <td className="text-center">{batch.start_date}</td>
+                        <td className="text-center">{batch.duration}</td>
+                        <td className="text-center">{batch.fees}</td>
+                        <td className="text-center">{batch.batch_details}</td>
+                        <td className="text-center">{batch.status}</td>
+                        <td>
+                          <Button
+                            variant="gradient"
+                            color="orange"
+                            onClick={() => handleEnroll(batch)}
+                          >
+                            Enroll
+                          </Button>
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            ) : (
+              <p>There's no training batch available now</p>
+            )}
+          </div>
+        </DialogBody>
+        <DialogFooter>
+          <Button variant="text" color="red" onClick={onClose} className="mr-1">
+            <span>Cancel</span>
+          </Button>
+          <Button variant="gradient" color="green" onClick={onClose}>
+            <span>Confirm</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </div>
+  );
+};
+
 export const Courses = () => {
+  // const { coursesData } = useGetCourses();
+
+  // console.log("from firestore", coursesData);
   const navigate = useNavigate();
   const handleNavigate = (course) => {
-    navigate(`/course-details/${course.courseId}`, { state: { course } });
+    let name = course.course_name.replace(/(%20|\s)/g, "-").toLowerCase();
+    navigate(`/course-details/${name}`, { state: { course } });
   };
   return (
     <div className="my-10 mx-5 flex items-center justify-center flex-col">
@@ -22,14 +101,14 @@ export const Courses = () => {
           >
             <div className="flex justify-center items-center flex-col">
               <img
-                src={data.image}
-                alt={data.courseTitle}
+                src={data.course_image}
+                alt={data.course_name}
                 className="object-cover"
                 width={"80%"}
                 height={"auto"}
               />
               <h1 className="text-center text-xl font-bold">
-                {data.courseTitle}
+                {data.course_name}
               </h1>
             </div>
           </div>
@@ -45,10 +124,11 @@ export const CourseDetails = () => {
   const [openBenefits, setOpenBenefits] = useState(false);
   const [openTarget, setOpenTarget] = useState(false);
   const [openFaq, setOpenFaq] = useState(false);
-  // const [razorpayLoaded, setRazorpayLoaded] = useState(false);
-
+  const [razorpayLoaded, setRazorpayLoaded] = useState(false);
+  const { courseDialogOpen, handleCourseDialog, batchData, handleEnroll } =
+    useCourseDialog();
   const { state } = useLocation();
-  const { id } = useParams();
+  // const { id } = useParams();
   if (!state) {
     return alert("no courses selected");
   }
@@ -67,103 +147,110 @@ export const CourseDetails = () => {
   //   }
   // }, []);
 
-  const handleSubmit = async (data) => {
-    const id = localStorage.getItem("user_id") || "";
-    console.log(id, !id);
-    if (!id) {
-      toast.info("Please Login Before Buying the course");
-      return;
-    }
-    await userInterested(id, data);
-  };
+  // const handleSubmit = async (data) => {
+  //   const id = localStorage.getItem("user_id") || "";
+  //   console.log(id, !id);
+  //   if (!id) {
+  //     toast.info("Please Login Before Buying the course");
+  //     return;
+  //   }
+  //   await userInterested(id, data);
+  // };
 
-  const handleBuy = useCallback(
-    async (event, data) => {
-      event.preventDefault();
-      const id = localStorage.getItem("user_id") || "";
-      console.log(id, !id);
-      if (!id) {
-        toast.info("Please Login Before Buying the course");
-        return;
-      }
-      // if (!razorpayLoaded) {
-      //   console.error("Razorpay SDK is not loaded yet.");
-      //   return;
-      // }
+  // const handleBuy = useCallback(
+  //   async (event, data) => {
+  //     event.preventDefault();
+  //     const id = localStorage.getItem("user_id") || "";
+  //     console.log(id, !id);
+  //     if (!id) {
+  //       toast.info("Please Login Before Buying the course");
+  //       return;
+  //     }
+  //     // if (!razorpayLoaded) {
+  //     //   console.error("Razorpay SDK is not loaded yet.");
+  //     //   return;
+  //     // }
 
-      try {
-        const orderData = {
-          amount: data.coursePrice,
-          notes: {
-            courseName: data.courseTitle,
-            courseId: data.courseId,
-          },
-        };
-        const order = await createsOrder(orderData);
-        console.clear();
-        var options = {
-          // key: import.meta.env.VITE_PAYMENT_KEY,
-          key: "rzp_test_B6bqVWAfF7BjWN",
-          amount: order.data.amount,
-          currency: order.data.currency,
-          name: "Radush Technologies",
-          description: "Test Transaction",
-          image: "https://radush.io/assets/logo-IjrLeoFJ.png",
-          order_id: order.data.orderId,
-          handler: function (res) {
-            const data = {
-              orderId: res.razorpay_order_id,
-              paymentId: res.razorpay_payment_id,
-              signature: res.razorpay_signature,
-              userId: id,
-            };
-            validatePayment(data);
-          },
-          notes: {
-            address: "Radush Technology",
-          },
-          theme: {
-            color: "#f97316",
-          },
-        };
-        const paymentObject = new Razorpay(options);
+  //     try {
+  //       const orderData = {
+  //         amount: data.coursePrice,
+  //         notes: {
+  //           courseName: data.course_name,
+  //           courseId: data.course_id,
+  //         },
+  //       };
+  //       const order = await createsOrder(orderData);
+  //       console.clear();
+  //       var options = {
+  //         // key: import.meta.env.VITE_PAYMENT_KEY,
+  //         key: "rzp_test_B6bqVWAfF7BjWN",
+  //         amount: order.data.amount,
+  //         currency: order.data.currency,
+  //         name: "Radush Technologies",
+  //         description: "Test Transaction",
+  //         image: "https://radush.io/assets/logo-IjrLeoFJ.png",
 
-        // paymentObject.on("payment.failed", function (response) {
-        //   alert(response.error.code);
-        //   alert(response.error.description);
-        //   alert(response.error.source);
-        //   alert(response.error.step);
-        //   alert(response.error.reason);
-        //   alert(response.error.metadata.order_id);
-        //   alert(response.error.metadata.payment_id);
-        // });
+  //         order_id: order.data.orderId,
+  //         handler: function (res) {
+  //           const data = {
+  //             orderId: res.razorpay_order_id,
+  //             paymentId: res.razorpay_payment_id,
+  //             signature: res.razorpay_signature,
+  //             userId: id,
+  //           };
+  //           validatePayment(data);
+  //         },
+  //         notes: {
+  //           address: "Radush Technology",
+  //         },
+  //         theme: {
+  //           color: "#f97316",
+  //         },
+  //       };
+  //       const paymentObject = new Razorpay(options);
 
-        paymentObject.open();
-        console.log(order.data.orderId);
-      } catch (err) {
-        console.error("payment error", err);
-      }
-    },
-    [Razorpay]
-  );
+  //       // paymentObject.on("payment.failed", function (response) {
+  //       //   alert(response.error.code);
+  //       //   alert(response.error.description);
+  //       //   alert(response.error.source);
+  //       //   alert(response.error.step);
+  //       //   alert(response.error.reason);
+  //       //   alert(response.error.metadata.order_id);
+  //       //   alert(response.error.metadata.payment_id);
+  //       // });
+
+  //       paymentObject.open();
+  //       console.log(order.data.orderId);
+  //     } catch (err) {
+  //       console.error("payment error", err);
+  //     }
+  //   },
+  //   [Razorpay]
+  // );
 
   return (
     <div className="m-6">
+      <CourseBatchDetails
+        open={courseDialogOpen}
+        onClose={handleCourseDialog}
+        batchData={batchData}
+        handleEnroll={handleEnroll}
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4  pl-1">
         <div className="flex justify-center items-center">
           <img
-            src={course.image}
-            alt={course.courseTitle}
+            src={course.course_image}
+            alt={course.course_name}
             className="object-cover"
           />
         </div>{" "}
         <div>
           <h1 className="text-left text-xl md:text-3xl font-semibold">
-            {course.courseTitle}
+            {course.course_name}
           </h1>
-          {course.introduction?.map((data, index) => (
+          {course.course_introduction?.map((data, index) => (
             <li key={index} className="py-2 font-medium">
-              {data.intro}
+              {data}
             </li>
           ))}
           {/* <button
@@ -173,7 +260,8 @@ export const CourseDetails = () => {
             Enroll
           </button> */}
           <button
-            onClick={() => handleSubmit(course)}
+            // onClick={() => handleSubmit(course)}
+            onClick={() => handleCourseDialog(course.course_id)}
             className="px-4 py-2 my-2 rounded text-black font-semibold bg-primary hover:text-white"
           >
             I'm Interested
@@ -223,7 +311,7 @@ export const CourseDetails = () => {
               }`}
             >
               <div className="mt-2 overflow-hidden">
-                {course.outline?.map((data, index) => (
+                {course.course_outline?.map((data, index) => (
                   <div key={index} className="mb-4">
                     <p className="text-xl font-semibold">
                       {index + 1}. {data.title}
@@ -235,7 +323,7 @@ export const CourseDetails = () => {
                           key={pointIndex}
                           className="pl-4 list-disc list-inside"
                         >
-                          {point.point}
+                          {point}
                         </li>
                       ))}
                     </ul>
@@ -286,8 +374,8 @@ export const CourseDetails = () => {
             }`}
           >
             <div className="mt-2 overflow-hidden">
-              {course.benefits?.map((data, index) => (
-                <li key={index}>{data.point}</li>
+              {course.course_benefits?.map((data, index) => (
+                <li key={index}>{data}</li>
               ))}
             </div>
           </div>
@@ -333,8 +421,8 @@ export const CourseDetails = () => {
             }`}
           >
             <div className="mt-2 overflow-hidden">
-              {course.target?.map((data, index) => (
-                <li key={index}>{data.point}</li>
+              {course.course_target?.map((data, index) => (
+                <li key={index}>{data}</li>
               ))}
             </div>
           </div>
@@ -380,7 +468,7 @@ export const CourseDetails = () => {
             }`}
           >
             <div className="mt-2 overflow-hidden">
-              {course.faq?.map((data, index) => (
+              {course.course_faq?.map((data, index) => (
                 <div key={index} className="my-2">
                   <p className="font-bold">
                     {index + 1}. {data.question}

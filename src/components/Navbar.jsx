@@ -108,9 +108,12 @@ const Navbar = () => {
                 Login
               </button>
 
-              <a href="/Speak" className="hidden md:flex">
-                <button className="btn">Contact Us</button>
-              </a>
+              <button
+                className="hidden md:flex btn "
+                onClick={() => navigate("/speak")}
+              >
+                Contact Us
+              </button>
             </>
           )}
 
@@ -148,9 +151,12 @@ const Navbar = () => {
                   <a href="/login">Login</a>
                 </li>
               )}
-              <a href="/Speak" className=" hover:bg-primary cursor-pointer">
+              <li className=" hover:bg-primary cursor-pointer">
+                <a href="/Speak">Contact Us</a>
+              </li>
+              {/* <a href="/Speak" className=" hover:bg-primary cursor-pointer">
                 <button className="">Speak to us</button>
-              </a>
+              </a> */}
             </ul>
           </div>
         )}
