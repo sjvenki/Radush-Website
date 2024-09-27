@@ -20,10 +20,11 @@ import Velocity from "./components/blog/Velocity";
 import { Courses, CourseDetails } from "./pages/Training";
 import { Login, Register, ForgotPassword } from "./pages/Auth";
 import Profile from "./pages/Profile";
-import Admin from "./pages/Admin";
+import AdminLayout from "./pages/Admin";
 import { Terms, Privacy, Refund } from "./pages/Legal";
 import TrainingBatch from "./pages/TrainingBatch.jsx";
 import PaymentConfirm from "./pages/admin/PaymentConfirm.jsx";
+import ManagePaidUser from "./pages/admin/ManagePaidUser.jsx";
 export const router = createBrowserRouter([
   {
     path: "/*",
@@ -34,7 +35,6 @@ export const router = createBrowserRouter([
       { path: "privacy-policy", element: <Privacy /> },
       { path: "terms-and-conditions", element: <Terms /> },
       { path: "login", element: <Login /> },
-      { path: "admin", element: <Admin /> },
       { path: "register", element: <Register /> },
       { path: "forgot-password", element: <ForgotPassword /> },
       { path: "profile", element: <Profile /> },
@@ -55,8 +55,16 @@ export const router = createBrowserRouter([
       { path: "devops", element: <Devops /> },
       { path: "need", element: <Need /> },
       { path: "velocity", element: <Velocity /> },
-      { path: "training-batch", element: <TrainingBatch /> },
-      { path: "enrollment-payment-link", element: <PaymentConfirm /> },
+      {
+        path: "admin",
+        element: <AdminLayout />,
+        children: [
+          { path: "", element: <TrainingBatch /> },
+          { path: "training-batch", element: <TrainingBatch /> },
+          { path: "enrollment-payment-link", element: <PaymentConfirm /> },
+          { path: "manage-paid-users", element: <ManagePaidUser /> },
+        ],
+      },
     ],
   },
 ]);

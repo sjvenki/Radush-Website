@@ -82,40 +82,47 @@ export const useCheckUser = () => {
     const checkUserRole = async () => {
       const id = localStorage.getItem("user_id") || "";
 
+      // If no user ID is found, user is not logged in
       if (!id) {
         console.log("User Not Logged In");
-        if (window.location.pathname == "/admin") {
-          navigate("/");
+        if (window.location.pathname.startsWith("/admin")) {
+          navigate("/"); // Redirect non-logged-in users from admin routes
         }
         return null;
       }
 
+      // If user ID exists, proceed to check their role
       if (id) {
         try {
           const response = await getUserData();
           const { role } = response.data();
           console.log("userRole", role);
+
           const path = window.location.pathname;
-          const isAdminPath = ["/admin"].includes(path);
+          const isAdminPath = path.startsWith("/admin"); // Check if it's any admin route
           const isAuthPath = [
             "/login",
             "/register",
             "/forgot-password",
           ].includes(path);
 
+          // If user is not an admin and is on an admin route, redirect them
           if (role !== "admin" && isAdminPath) {
-            navigate("/");
-          } else if (role && isAuthPath) {
-            navigate("/");
+            navigate("/"); // Redirect to homepage or another public route
+          }
+          // If user is already logged in and is on an authentication page, redirect them
+          else if (role && isAuthPath) {
+            navigate("/"); // Redirect logged-in user away from login/register
           } else {
-            return 1;
+            return 1; // User is authorized
           }
         } catch (error) {
           console.error("Error checking user role:", error);
-          navigate("/");
+          navigate("/"); // Redirect in case of error
         }
       }
     };
+
     checkUserRole();
   }, [navigate]);
 

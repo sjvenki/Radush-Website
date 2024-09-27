@@ -32,6 +32,7 @@ const OpenDialogPaymentLink = ({ open, handleDialog, data }) => {
       setDisableButton(false);
     }
     handleDialog();
+    toast.success("Payment link send successfully");
   };
 
   return (
@@ -48,6 +49,7 @@ const OpenDialogPaymentLink = ({ open, handleDialog, data }) => {
               label={"Enter Price to generate the payment link:"}
               value={paymentFormdata.agreedPrice}
               onChange={handleChange("agreedPrice")}
+              type="number"
             />
           </div>
         </DialogBody>
@@ -115,25 +117,30 @@ const PaymentConfirm = () => {
           </tr>
         </thead>
         <tbody>
-          {enrollmentData?.map((data) => (
-            <tr>
-              <th>{data.userName}</th>
-              <th>{data.userEmail}</th>
-              <th>{data.userMobile}</th>
-              <th>{data.course_name}</th>
-              <th>{data.payment_status}</th>
-              <th>{handleDate(data.request_date)}</th>
-              <th>
-                <Button
-                  variant="gradient"
-                  className="bg-primary"
-                  onClick={() => handlePaymentDialog(data)}
-                >
-                  Click Here to Send Payment Link to User
-                </Button>
-              </th>
-            </tr>
-          ))}
+          {enrollmentData
+            ?.filter(
+              (data) =>
+                data.price_agreed == "" && data.payment_status == "registered"
+            )
+            .map((data) => (
+              <tr>
+                <th>{data.userName}</th>
+                <th>{data.userEmail}</th>
+                <th>{data.userMobile}</th>
+                <th>{data.course_name}</th>
+                <th>{data.payment_status}</th>
+                <th>{handleDate(data.request_date)}</th>
+                <th>
+                  <Button
+                    variant="gradient"
+                    className="bg-primary"
+                    onClick={() => handlePaymentDialog(data)}
+                  >
+                    Click Here to Send Payment Link to User
+                  </Button>
+                </th>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>

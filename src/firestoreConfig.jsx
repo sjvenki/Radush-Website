@@ -1,27 +1,12 @@
-import { getApp, initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, connectAuthEmulator } from "firebase/auth";
-import {
-  getFirestore,
-  connectFirestoreEmulator,
-  getDocs,
-  collectionGroup,
-} from "firebase/firestore";
+import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
 import {
   getFunctions,
   connectFunctionsEmulator,
   httpsCallable,
 } from "firebase/functions";
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAOPt2A9lXl8HFfZtJoqlAKjMm7l7t9B4U",
-//   authDomain: "radush-54ec0.firebaseapp.com",
-//   projectId: "radush-54ec0",
-//   storageBucket: "radush-54ec0.appspot.com",
-//   messagingSenderId: "1038089777758",
-//   appId: "1:1038089777758:web:3bdbdf47db09d861483acf",
-//   measurementId: "G-CMYQCXMYEN",
-// };
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -32,11 +17,21 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_ID,
   measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAOPt2A9lXl8HFfZtJoqlAKjMm7l7t9B4U",
+//   authDomain: "radush-54ec0.firebaseapp.com",
+//   projectId: "radush-54ec0",
+//   storageBucket: "radush-54ec0.appspot.com",
+//   messagingSenderId: "1038089777758",
+//   appId: "1:1038089777758:web:3bdbdf47db09d861483acf",
+//   measurementId: "G-CMYQCXMYEN",
+// };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const functions = getFunctions(app);
+
 // initializeApp(firebaseConfig);
 // export const auth = getAuth();
 // export const db = getFirestore();

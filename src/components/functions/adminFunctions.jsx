@@ -31,11 +31,7 @@ export const createTrainingBatch = async (data) => {
 };
 
 export const getEnrollments = async () => {
-  const getEnrollmentsQuery = query(
-    collection(db, "course_enrollments"),
-    where("price_agreed", "==", "")
-  );
-  const enrollData = await getDocs(getEnrollmentsQuery);
+  const enrollData = await getDocs(collection(db, "course_enrollments"));
   const enrollmentUserData = await Promise.all(
     enrollData.docs.map(async (enrollmentDoc) => {
       const enrollmentData = enrollmentDoc.data();
