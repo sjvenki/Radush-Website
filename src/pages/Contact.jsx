@@ -12,6 +12,7 @@ const Conatct = () => {
           <img
             src={ban}
             style={{ width: 350, height: 250, objectFit: "cover" }}
+            alt="bangalore address"
           />
           <p className="text-xl mt-4">Radush Technologies Pvt. Ltd.</p>
           <p className="text-base"> Alpine Park</p>
@@ -20,7 +21,7 @@ const Conatct = () => {
           <p className="text-base">560068.</p>
           <p className="text-base font-semibold">+91 6366094725</p>
         </div>
-        <div>
+        {/* <div>
           <img
             src={sin}
             style={{ width: 350, height: 250, objectFit: "cover" }}
@@ -31,11 +32,12 @@ const Conatct = () => {
           <p className="text-base">2 #04-05</p>
           <p className="text-base"> Singapore-486066</p>
           <p className="text-base font-semibold">+65 80623768</p>
-        </div>
+        </div> */}
         <div>
           <img
             src={odessa}
             style={{ width: 350, height: 250, objectFit: "cover" }}
+            alt="odesaa address"
           />
           <p className="text-xl mt-4">Radush Technologies LLC</p>
           <p className="text-base"> 3200 Living Coral Dr,</p>

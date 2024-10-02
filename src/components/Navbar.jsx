@@ -22,8 +22,12 @@ const Navbar = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await getUserData();
-      const { role } = response.data();
-      setRole(role);
+      if (response.data()) {
+        const { role } = response.data();
+        setRole(role);
+      } else {
+        console.log("User Not logged In");
+      }
     }
     fetchData();
   });

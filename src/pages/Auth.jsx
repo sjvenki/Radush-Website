@@ -178,7 +178,7 @@ export const Login = () => {
           <div className="flex justify-center items-center">
             <img
               src={loginI}
-              alt="login image"
+              alt="login"
               className="w-full h-auto object-cover"
             />
           </div>

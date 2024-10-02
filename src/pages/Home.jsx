@@ -11,7 +11,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import complete from "../assets/complete.png";
-import aegan from "../assets/aegan.jpg";
+import aegan from "../assets/aegan.jpg"; //aegan not webp
 import cyfir from "../assets/cyfirma.png";
 import nagios from "../assets/nagios.png";
 import spl from "../assets/splunk.png";

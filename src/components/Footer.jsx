@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import iso from "../assets/iso.png";
-import iso1 from "../assets/iso1.png";
-import mems from "../assets/mems.png";
 
 const Footer = () => {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -21,7 +18,7 @@ const Footer = () => {
             Your Tech Transformation Partner. Founded in 2022, we've grown from
             training and consulting to a comprehensive solution provider. We
             empower businesses with cutting-edge technologies and expert
-            guidance. With Global presence in India. Singapore and USA, Radish
+            guidance. With Global presence in India. Singapore and USA, Radush
             is your one-stop shop for navigating the ever-changing tech
             landscape.
           </p>
@@ -34,9 +31,9 @@ const Footer = () => {
               version="1.1"
               id="Layer_1"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="-143 145 512 512"
-              xml:space="preserve"
+              xmlSpace="preserve"
             >
               <g>
                 <path
@@ -95,8 +92,8 @@ const Footer = () => {
                 fill="#ea580c"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M17.3106 3.7218C13.7773 3.40588 10.2228 3.40588 6.68943 3.7218L5.17208 3.85747C3.54447 4.003 2.2294 5.24642 1.99301 6.86334C1.49501 10.2697 1.49501 13.7303 1.99301 17.1366C2.2294 18.7535 3.54447 19.9969 5.17208 20.1425L6.68943 20.2781C10.2228 20.5941 13.7773 20.5941 17.3106 20.2781L18.8279 20.1425C20.4556 19.9969 21.7706 18.7535 22.007 17.1366C22.505 13.7303 22.505 10.2697 22.007 6.86334C21.7706 5.24642 20.4556 4.003 18.8279 3.85747L17.3106 3.7218ZM6.82301 5.21584C10.2675 4.90787 13.7325 4.90787 17.177 5.21584L18.6944 5.35151C19.6305 5.43521 20.3868 6.15036 20.5228 7.08033C20.9998 10.3427 20.9998 13.6572 20.5228 16.9196C20.3868 17.8496 19.6305 18.5647 18.6944 18.6484L17.177 18.7841C13.7325 19.0921 10.2675 19.0921 6.82301 18.7841L5.30567 18.6484C4.36955 18.5647 3.61319 17.8496 3.47723 16.9196C3.00027 13.6572 3.00027 10.3427 3.47723 7.08033C3.61319 6.15036 4.36955 5.43521 5.30567 5.35151L6.82301 5.21584Z"
                 fill="#ea580c"
               />
