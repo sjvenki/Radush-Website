@@ -3,10 +3,11 @@ import { useAdminOperations } from "../../components/Hooks/adminHooks";
 
 const ManagePaidUser = () => {
   const { enrollmentData } = useAdminOperations();
+  console.log(enrollmentData);
+
   const handleDate = (request_date) => {
-    const reqDate = new Date(
-      request_date.seconds * 1000 + request_date.nanoseconds / 1000000
-    ).toLocaleDateString();
+    const reqDate = new Date(request_date).toLocaleDateString();
+    console.log(request_date, reqDate);
     return reqDate;
   };
 
@@ -31,7 +32,7 @@ const ManagePaidUser = () => {
           {enrollmentData
             ?.filter((data) => data.payment_status == "paid")
             .map((data) => (
-              <tr>
+              <tr key={data.enrollment_id}>
                 <th>{data.userName}</th>
                 <th>{data.userEmail}</th>
                 <th>{data.userMobile}</th>

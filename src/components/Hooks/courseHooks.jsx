@@ -5,11 +5,14 @@ import {
 } from "../functions/userFunctions";
 import { errorHandler } from "../errorHandler";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export const useCourseDialog = () => {
   const [courseDialogOpen, setCourseDialogOpen] = useState(false);
 
   const [batchData, setBatchData] = useState("");
+  const navigate = useNavigate();
+
   const handleCourseDialog = (id) => {
     getData(id);
     setCourseDialogOpen((prev) => !prev);
@@ -33,6 +36,7 @@ export const useCourseDialog = () => {
       if (!id) {
         setCourseDialogOpen((prev) => !prev);
         toast.info("Please Login Before Buying the course");
+        setTimeout(() => navigate("/login"), 1000);
         return;
       }
       const check = await addCourseEnrollement(id, details);

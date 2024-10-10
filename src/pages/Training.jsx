@@ -39,27 +39,26 @@ const CourseBatchDetails = ({ open, onClose, batchData, handleEnroll }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {batchData &&
-                    batchData?.map((batch) => (
-                      <tr key={batch.id}>
-                        <td className="text-center">{batch.batch_id}</td>
-                        <td className="text-center">{batch.course_name}</td>
-                        <td className="text-center">{batch.start_date}</td>
-                        <td className="text-center">{batch.duration}</td>
-                        <td className="text-center">{batch.fees}</td>
-                        <td className="text-center">{batch.batch_details}</td>
-                        <td className="text-center">{batch.status}</td>
-                        <td>
-                          <Button
-                            variant="gradient"
-                            color="orange"
-                            onClick={() => handleEnroll(batch)}
-                          >
-                            Enroll
-                          </Button>
-                        </td>
-                      </tr>
-                    ))}
+                  {batchData?.map((batch) => (
+                    <tr key={batch.id}>
+                      <td className="text-center">{batch.batch_id}</td>
+                      <td className="text-center">{batch.course_name}</td>
+                      <td className="text-center">{batch.start_date}</td>
+                      <td className="text-center">{batch.duration}</td>
+                      <td className="text-center">{batch.fees}</td>
+                      <td className="text-center">{batch.batch_details}</td>
+                      <td className="text-center">{batch.status}</td>
+                      <td>
+                        <Button
+                          variant="gradient"
+                          color="orange"
+                          onClick={() => handleEnroll(batch)}
+                        >
+                          Enroll
+                        </Button>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             ) : (
