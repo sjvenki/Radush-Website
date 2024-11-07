@@ -3,8 +3,11 @@ import { toast } from "react-toastify";
 import {
   createTrainingBatch,
   getEnrollments,
+  getTrainingBatch,
+  updateTrainingBatch,
 } from "../functions/adminFunctions";
 import { errorHandler } from "../errorHandler";
+
 export const useTrainingBatch = () => {
   const [formData, setFormData] = useState({
     batchId: "",
@@ -114,5 +117,62 @@ export const useAdminOperations = () => {
     handlePaymentDialog,
     paymentDialog,
     existingPaymentData,
+  };
+};
+
+export const useModifyTrainingBatch = () => {
+  const [batchData, setBatchData] = useState(null);
+  const [open, setOpen] = useState(false);
+  const [editData, setEditData] = useState(null);
+  const [updateButtonDisable, setUpdateButtonDisable] = useState(false);
+  const getData = async () => {
+    const response = await getTrainingBatch();
+    setBatchData(response);
+  };
+
+  const handleDate = (request_date) => {
+    const reqDate = new Date(
+      request_date.seconds * 1000 + request_date.nanoseconds / 1000000
+    ).toLocaleDateString();
+    return reqDate;
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+  const handleOpen = (data) => {
+    setEditData(data);
+    setOpen(true);
+    setUpdateButtonDisable(false);
+  };
+  const handleClose = () => {
+    setOpen((prev) => !prev);
+  };
+  const handleChange = (field) => (e) => {
+    setEditData({ ...editData, [field]: e.target.value });
+  };
+
+  const handleUpdate = async () => {
+    try {
+      setUpdateButtonDisable(true);
+      const response = await updateTrainingBatch(editData);
+      handleClose();
+      if (response.status == 200) {
+        toast.success("Training batch updated successfully");
+      }
+    } catch (err) {
+      setUpdateButtonDisable(false);
+      console.log("Update training batch error", err);
+    }
+  };
+  return {
+    batchData,
+    handleDate,
+    handleOpen,
+    handleClose,
+    open,
+    editData,
+    handleChange,
+    handleUpdate,
+    updateButtonDisable,
   };
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   getTrainingBatchDetails,
   addCourseEnrollement,
+  getAllTrainingBatchDetails,
 } from "../functions/userFunctions";
 import { errorHandler } from "../errorHandler";
 import { toast } from "react-toastify";
@@ -25,6 +26,19 @@ export const useCourseDialog = () => {
         ...doc.data(),
       }));
       setBatchData(mappedData);
+    } catch (err) {
+      errorHandler(err);
+    }
+  };
+
+  const getAllData = async () => {
+    try {
+      const response = await getAllTrainingBatchDetails();
+      const mappedData = response?.docs?.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      return mappedData;
     } catch (err) {
       errorHandler(err);
     }
@@ -58,5 +72,6 @@ export const useCourseDialog = () => {
     handleCourseDialog,
     batchData,
     handleEnroll,
+    getAllData,
   };
 };

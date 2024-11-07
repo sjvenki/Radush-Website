@@ -15,6 +15,58 @@ import {
 import { useCourseDialog } from "../components/Hooks/courseHooks";
 // import Button from "../components/ui/Button";
 
+export const CourseTable = ({
+  batchData,
+  enrollButton = false,
+  handleEnroll,
+}) => {
+  return (
+    <div className="overflow-x-auto">
+      {batchData && batchData.length > 0 ? (
+        <table className="min-w-full">
+          <thead>
+            <tr>
+              <th>Batch ID</th>
+              <th>Course Name</th>
+              <th>Start Date</th>
+              <th>Duration</th>
+              <th>Course Fees</th>
+              <th>Batch Details</th>
+              <th>Status</th> {enrollButton && <th>Enroll</th>}
+            </tr>
+          </thead>
+          <tbody>
+            {batchData?.map((batch) => (
+              <tr key={batch.id}>
+                <td className="text-center">{batch.batch_id}</td>
+                <td className="text-center">{batch.course_name}</td>
+                <td className="text-center">{batch.start_date}</td>
+                <td className="text-center">{batch.duration}</td>
+                <td className="text-center">{batch.fees}</td>
+                <td className="text-center">{batch.batch_details}</td>
+                <td className="text-center">{batch.status}</td>
+                {enrollButton && (
+                  <td>
+                    <Button
+                      variant="gradient"
+                      color="orange"
+                      onClick={() => handleEnroll(batch)}
+                    >
+                      Enroll
+                    </Button>
+                  </td>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p>There's no training batch available now</p>
+      )}
+    </div>
+  );
+};
+
 const CourseBatchDetails = ({ open, onClose, batchData, handleEnroll }) => {
   return (
     <div className="flex justify-center container max-w-screen-lg bg-opacity-0">
@@ -23,48 +75,11 @@ const CourseBatchDetails = ({ open, onClose, batchData, handleEnroll }) => {
           <h1 className="text-xl font-bold text-center">Training Batches:</h1>
         </DialogHeader>
         <DialogBody>
-          <div className="overflow-x-auto">
-            {batchData.length > 0 ? (
-              <table className="min-w-full">
-                <thead>
-                  <tr>
-                    <th>Batch ID</th>
-                    <th>Course Name</th>
-                    <th>Start Date</th>
-                    <th>Duration</th>
-                    <th>Course Fees</th>
-                    <th>Batch Details</th>
-                    <th>Status</th>
-                    <th>Enroll</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {batchData?.map((batch) => (
-                    <tr key={batch.id}>
-                      <td className="text-center">{batch.batch_id}</td>
-                      <td className="text-center">{batch.course_name}</td>
-                      <td className="text-center">{batch.start_date}</td>
-                      <td className="text-center">{batch.duration}</td>
-                      <td className="text-center">{batch.fees}</td>
-                      <td className="text-center">{batch.batch_details}</td>
-                      <td className="text-center">{batch.status}</td>
-                      <td>
-                        <Button
-                          variant="gradient"
-                          color="orange"
-                          onClick={() => handleEnroll(batch)}
-                        >
-                          Enroll
-                        </Button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              <p>There's no training batch available now</p>
-            )}
-          </div>
+          <CourseTable
+            batchData={batchData}
+            enrollButton={true}
+            handleEnroll={handleEnroll}
+          />
         </DialogBody>
         <DialogFooter>
           <Button variant="text" color="red" onClick={onClose} className="mr-1">

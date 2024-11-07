@@ -139,3 +139,8 @@ export const addCourseEnrollement = async (userId, details) => {
     return true;
   }
 };
+
+export const getAllTrainingBatchDetails = async () => {
+  const batchData = await getDocs(collection(db, "training_batches"));
+  return batchData;
+};

@@ -4,8 +4,8 @@ import {
   collection,
   Timestamp,
   getDocs,
-  query,
-  where,
+  updateDoc,
+  setDoc,
   getDoc,
   doc,
 } from "firebase/firestore";
@@ -51,4 +51,16 @@ export const getEnrollments = async () => {
     })
   );
   return enrollmentUserData.filter((data) => data !== null);
+};
+
+export const getTrainingBatch = async () => {
+  const response = await getDocs(collection(db, "training_batches"));
+  const batchData = response.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  return batchData;
+};
+
+export const updateTrainingBatch = async (data) => {
+  const updateRef = doc(db, "training_batches", data.id);
+  await updateDoc(updateRef, data);
+  return { status: 200 };
 };

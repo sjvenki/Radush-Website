@@ -25,6 +25,8 @@ import { Terms, Privacy, Refund } from "./pages/Legal";
 import TrainingBatch from "./pages/TrainingBatch.jsx";
 import PaymentConfirm from "./pages/admin/PaymentConfirm.jsx";
 import ManagePaidUser from "./pages/admin/ManagePaidUser.jsx";
+import TrainingBatchCrud from "./pages/admin/TrainingBatchCrud.jsx";
+import TrainingBatchCalendar from "./pages/TrainingBatchCalendar.jsx";
 export const router = createBrowserRouter([
   {
     path: "/*",
@@ -55,6 +57,7 @@ export const router = createBrowserRouter([
       { path: "devops", element: <Devops /> },
       { path: "need", element: <Need /> },
       { path: "velocity", element: <Velocity /> },
+      { path: "training-batch-calendar", element: <TrainingBatchCalendar /> },
       {
         path: "admin",
         element: <AdminLayout />,
@@ -63,6 +66,7 @@ export const router = createBrowserRouter([
           { path: "training-batch", element: <TrainingBatch /> },
           { path: "enrollment-payment-link", element: <PaymentConfirm /> },
           { path: "manage-paid-users", element: <ManagePaidUser /> },
+          { path: "crud-training-batch", element: <TrainingBatchCrud /> },
         ],
       },
     ],

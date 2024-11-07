@@ -22,6 +22,7 @@ export const navbarList = [
   { route: "/About", name: "About us" },
   { route: "/Services", name: "Services" },
   { route: "/Products", name: "Products" },
+  { route: "/training-batch-calendar", name: "Training Batch Calendar" },
   { route: "/courses", name: "Courses" },
   { route: "/Contact", name: "Our Global Pressence" },
   { route: "/Content", name: "Content Corner" },

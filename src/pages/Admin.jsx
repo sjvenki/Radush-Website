@@ -75,27 +75,27 @@ const AdminLayout = () => {
     { name: "Create Training Batch", path: "training-batch" },
     { name: "Send Payment Link", path: "enrollment-payment-link" },
     { name: "Manage Paid Users", path: "manage-paid-users" },
+    { name: "Modify Training Batch", path: "crud-training-batch" },
   ];
   return (
-    <>
-      <div className="w-full grid grid-cols-12 gap-1">
-        <div className="col-span-3">
-          <nav className="my-2">
-            {adminNavs.map((navs) => (
-              <p
-                className="w-full hover:bg-[#f97316] hover:text-white flex justify-center py-4 font-semibold rounded-sm"
-                onClick={() => navigate(navs.path)}
-              >
-                {navs.name}
-              </p>
-            ))}
-          </nav>
-        </div>
-        <div className="col-span-9">
-          <Outlet />
-        </div>
+    <div className="w-full grid grid-cols-12 gap-1">
+      <div className="col-span-3">
+        <nav className="my-2">
+          {adminNavs.map((navs) => (
+            <button
+              key={navs.path}
+              className="w-full hover:bg-[#f97316] hover:text-white flex justify-center py-4 font-semibold rounded-sm"
+              onClick={() => navigate(navs.path)}
+            >
+              {navs.name}
+            </button>
+          ))}
+        </nav>
       </div>
-    </>
+      <div className="col-span-9">
+        <Outlet />
+      </div>
+    </div>
   );
 };
 

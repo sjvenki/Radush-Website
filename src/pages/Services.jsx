@@ -8,7 +8,6 @@ import angular from "../assets/angular.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
 
 import { serviceHelper } from "../utils/helpers";
 const Services = () => {
@@ -48,7 +47,7 @@ const Services = () => {
       {/* services */}
       <div className="grid md:grid-cols-3 container mx-auto w-full max-w-screen-lg gap-9 my-20">
         {serviceHelper?.map((data, index) => (
-          <div key={index} className="shadow-lg p-3 bg-footer">
+          <div key={index + data.title} className="shadow-lg p-3 bg-footer">
             <img
               src={data.image}
               alt={data.title}
@@ -57,7 +56,7 @@ const Services = () => {
             <p className="text-3xl mt-4">{data.title}</p>
             <p className="text-base text-gray my-3">{data.detail}</p>
             {data.list?.map((li, index) => (
-              <p>
+              <p key={index + 1}>
                 {index + 1}. {li.li}
               </p>
             ))}

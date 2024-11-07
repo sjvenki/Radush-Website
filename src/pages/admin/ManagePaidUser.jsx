@@ -25,7 +25,6 @@ const ManagePaidUser = () => {
             <th>User Enrolled Course</th>
             <th>Payment Status</th>
             <th>Enrollment Date</th>
-            {/* <th>Send Payment Link</th> */}
           </tr>
         </thead>
         <tbody>

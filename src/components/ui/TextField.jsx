@@ -20,6 +20,27 @@ export const TextField = ({
   );
 };
 
+export const CustomTextField = ({
+  label,
+  value,
+  onChange,
+  type = "text",
+  accept = "null",
+}) => {
+  return (
+    <div className="flex flex-col my-4">
+      <label className="font-semibold">{label}</label>
+      <input
+        className="bg-slate-100 border-2 border-gray-300 shadow-md rounded-md w-full"
+        value={value}
+        onChange={onChange}
+        type={type}
+        accept={accept}
+        required
+      />
+    </div>
+  );
+};
 export const MultiTextField = ({
   label,
   value,
