@@ -63,7 +63,7 @@ const Products = () => {
               https://ecHyre.com <b>Coming Soon..</b>
             </p>
           </a>
-          <p className="text-base mt-4">
+          {/* <p className="text-base mt-4">
             We are pioneers in the QR code revolution,dedicated to creating
             products that harness the capabilities of QR codes to benefit
             businesses, organizations, and individuals, making the world a more
@@ -73,7 +73,7 @@ const Products = () => {
             At QRcode4you.com , we are passionate about the untapped potential
             of QR codes and their power to revolutionise the way we connect,
             communicate, and engage with the world.
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
