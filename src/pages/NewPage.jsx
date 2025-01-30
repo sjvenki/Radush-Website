@@ -248,7 +248,7 @@ const NewPage = () => {
       {/* Market Overview Section */}
       <div className="max-h-[330vh] md:relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 md:px-8 lg:px-16">
-          <div className="flex flex-col justify-center items-start space-y-6 md:space-y-8">
+          <div className="flex flex-col justify-center items-start space-y-6 md:space-y-8 sm:h-full md:h-screen sm:fixed md:sticky top-0">
             <h2 className="text-3xl font-bold">Market Overview</h2>
             <p className="text-gray-600 text-lg">
               The global fraud detection market is projected to surpass $40
