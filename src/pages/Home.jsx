@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import banner from "../assets/banner.png";
 import { ReactTyped } from "react-typed";
 import web from "../assets/web.png";

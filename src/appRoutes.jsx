@@ -27,12 +27,14 @@ import PaymentConfirm from "./pages/admin/PaymentConfirm.jsx";
 import ManagePaidUser from "./pages/admin/ManagePaidUser.jsx";
 import TrainingBatchCrud from "./pages/admin/TrainingBatchCrud.jsx";
 import TrainingBatchCalendar from "./pages/TrainingBatchCalendar.jsx";
+import NewPage from "./pages/NewPage.jsx";
 export const router = createBrowserRouter([
   {
     path: "/*",
     element: <App />,
     children: [
       { path: "/*", element: <Home /> },
+      { path: "new-page", element: <NewPage /> },
       { path: "refund-and-cancellation", element: <Refund /> },
       { path: "privacy-policy", element: <Privacy /> },
       { path: "terms-and-conditions", element: <Terms /> },
