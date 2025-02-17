@@ -41,13 +41,15 @@ export const functions = getFunctions(app);
 // connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
 //httpsCallable
-export const createsOrder = httpsCallable(functions, "createsOrder");
-export const validatePayment = httpsCallable(functions, "validatePayment");
-export const testPaymentLink = httpsCallable(functions, "testPaymentLink");
+// export const createsOrder = httpsCallable(functions, "createsOrder");
+// export const validatePayment = httpsCallable(functions, "validatePayment");
+// export const testPaymentLink = httpsCallable(functions, "testPaymentLink");
+
 // testPaymentLink();
 export const getPaymentLinkData = httpsCallable(
   functions,
   "getPaymentLinkData"
 );
 
+export const SendDemoEmail = httpsCallable(functions, "sendDemoMail");
 getAnalytics();

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
+import { FaAngleLeft } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 import tree from "../assets/newPage/tree.png";
 import { motion } from "framer-motion";
 import {
@@ -8,7 +10,20 @@ import {
   TabsBody,
   Tab,
   TabPanel,
+  Typography,
+  Input,
+  Card,
+  Button,
+  Radio,
+  CardHeader,
+  CardBody,
+  Alert,
+  Select,
+  Option,
+  IconButton,
 } from "@material-tailwind/react";
+import { SendDemoEmail } from "../firestoreConfig";
+import { toast } from "react-toastify";
 
 const cards = [
   {
@@ -34,7 +49,7 @@ const cards = [
 const Cards = ({ index, card, sign }) => {
   return (
     <div className="h-screen flex justify-center items-center sticky top-0">
-      <div
+      <Card
         className={`
           w-[300px]
           h-[350px]
@@ -55,7 +70,7 @@ const Cards = ({ index, card, sign }) => {
       >
         <h2 className="text-xl font-bold mb-4">{card.name}</h2>
         <p className="text-center text-gray-700">{card.content}</p>
-      </div>
+      </Card>
     </div>
   );
 };
@@ -96,6 +111,357 @@ const ScrollRevealGrid = () => {
         ))}
       </div>
     </div>
+  );
+};
+const Calendar = ({ selected, onSelect, disabled }) => {
+  const [currentDate, setCurrentDate] = React.useState(new Date());
+
+  const daysInMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() + 1,
+    0
+  ).getDate();
+
+  const firstDayOfMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    1
+  ).getDay();
+
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const generateDays = () => {
+    const days = [];
+    for (let i = 0; i < firstDayOfMonth; i++) {
+      days.push(<div key={`empty-${i}`} className="h-10" />);
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const date = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        day
+      );
+      const isSelected =
+        selected && date.toDateString() === selected.toDateString();
+      const isDisabled = disabled && disabled(date);
+
+      days.push(
+        <Button
+          key={day}
+          variant={isSelected ? "filled" : "text"}
+          color={isSelected ? "orange" : "gray"}
+          className={`h-10 w-10 p-0 ${
+            isDisabled ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-50"
+          }`}
+          disabled={isDisabled}
+          onClick={() => !isDisabled && onSelect(date)}
+        >
+          {day}
+        </Button>
+      );
+    }
+    return days;
+  };
+
+  const nextMonth = () => {
+    setCurrentDate(
+      new Date(currentDate.getFullYear(), currentDate.getMonth() + 1)
+    );
+  };
+
+  const previousMonth = () => {
+    setCurrentDate(
+      new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)
+    );
+  };
+
+  return (
+    <div className="w-full  flex justify-center flex-col">
+      <div className="flex items-center justify-between mb-4">
+        <IconButton
+          variant="text"
+          color="gray"
+          onClick={previousMonth}
+          className="rounded-full"
+        >
+          <FaAngleLeft className="h-4 w-4" />
+        </IconButton>
+
+        <Typography variant="h6" color="blue-gray">
+          {months[currentDate.getMonth()]} {currentDate.getFullYear()}
+        </Typography>
+
+        <IconButton
+          variant="text"
+          color="gray"
+          onClick={nextMonth}
+          className="rounded-full"
+        >
+          <FaAngleRight className="h-4 w-4" />
+        </IconButton>
+      </div>
+
+      <div className="grid grid-cols-7 gap-1 mb-2">
+        {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
+          <Typography
+            key={day}
+            variant="small"
+            color="blue-gray"
+            className="text-center font-medium"
+          >
+            {day}
+          </Typography>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-7 gap-1">{generateDays()}</div>
+    </div>
+  );
+};
+
+const ContactDemoForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    companyName: "",
+    mobile: "",
+    email: "",
+    preference: "",
+    date: null,
+    time: "",
+  });
+
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [buttonStatus, setButtonStatus] = useState(false);
+  // Calculate minimum allowed date (48 hours from now)
+  const getMinDate = () => {
+    const minDate = new Date();
+    minDate.setHours(minDate.getHours() + 48);
+    return minDate;
+  };
+
+  // Generate available time slots (9 AM to 5 PM)
+  const timeSlots = Array.from({ length: 17 }, (_, i) => {
+    const hour = Math.floor(i / 2) + 9;
+    const minute = i % 2 === 0 ? "00" : "30";
+    const period = hour >= 12 ? "PM" : "AM";
+    const displayHour = hour > 12 ? hour - 12 : hour;
+    return `${displayHour}:${minute} ${period}`;
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handlePreferenceChange = (value) => {
+    setFormData((prev) => ({
+      ...prev,
+      preference: value,
+      date: null,
+      time: "",
+    }));
+    setShowCalendar(value === "watch");
+  };
+
+  const handleDateChange = (date) => {
+    setFormData((prev) => ({
+      ...prev,
+      date,
+      time: "",
+    }));
+  };
+
+  const handleTimeChange = (value) => {
+    setFormData((prev) => ({
+      ...prev,
+      time: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setButtonStatus(true);
+    try {
+      await SendDemoEmail(formData);
+      setFormData({
+        name: "",
+        companyName: "",
+        mobile: "",
+        email: "",
+        preference: "",
+        date: null,
+        time: "",
+      });
+      setShowCalendar(false);
+      setButtonStatus(false);
+      toast.success(
+        "Message Sent successfully! Our team will contact you soon."
+      );
+    } catch (error) {
+      setButtonStatus(false);
+      console.error(error);
+    }
+  };
+
+  return (
+    <Card className="w-full max-w-2xl mx-auto my-4 shadow-lg shadow-black-500">
+      <Typography className="font-bold text-2xl text-center" color="orange">
+        Schedule a Demo
+        {/* <Typography variant="h5" color="white">
+          {formData.preference === "watch" ? "Schedule a Demo" : "Contact Us"}
+        </Typography> */}
+      </Typography>
+      <CardBody className="p-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-4">
+            <Input
+              label="Name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+              color="orange"
+              // className="!border-t-blue-gray-200 focus:!border-t-orange-500"
+            />
+
+            <Input
+              label="Company Name"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleInputChange}
+              required
+              color="orange"
+              // className="!border-t-blue-gray-200 focus:!border-t-orange-500"
+            />
+
+            <Input
+              label="Mobile"
+              name="mobile"
+              type="tel"
+              value={formData.mobile}
+              onChange={handleInputChange}
+              required
+              color="orange"
+              // className="!border-t-blue-gray-200 focus:!border-t-orange-500"
+            />
+
+            <Input
+              label="Email Address"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+              color="orange"
+              // className="!border-t-blue-gray-200 focus:!border-t-orange-500"
+            />
+
+            <div className="space-y-2">
+              <Typography variant="h6" color="blue-gray">
+                What would you prefer?
+              </Typography>
+              <div className="flex flex-col gap-2">
+                <Radio
+                  name="preference"
+                  label="Talk to Sales"
+                  value="talk"
+                  color="orange"
+                  onChange={() => handlePreferenceChange("talk")}
+                  checked={formData.preference === "talk"}
+                />
+                <Radio
+                  name="preference"
+                  label="Watch Demo"
+                  value="watch"
+                  color="orange"
+                  onChange={() => handlePreferenceChange("watch")}
+                  checked={formData.preference === "watch"}
+                />
+              </div>
+            </div>
+
+            {showCalendar && (
+              <div className="space-y-4 flex items-center justify-center flex-col">
+                <Alert color="blue" className="bg-blue-50 text-blue-900">
+                  Please note that demos require a minimum of 48 hours advance
+                  booking for preparation.
+                </Alert>
+
+                <div>
+                  <Typography variant="h6" color="blue-gray" className="mb-2">
+                    Select Preferred Date
+                  </Typography>
+                  <div className="border rounded-lg p-4 max-w-xs ">
+                    <Calendar
+                      mode="single"
+                      selected={formData.date}
+                      onSelect={handleDateChange}
+                      className="rounded-lg border"
+                      disabled={(date) => {
+                        const minDate = getMinDate();
+                        const day = date.getDay();
+                        return date < minDate;
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {formData.date && (
+                  <div>
+                    <Typography variant="h6" color="blue-gray" className="mb-2">
+                      Select Preferred Time
+                    </Typography>
+                    <Select
+                      label="Select Time"
+                      value={formData.time}
+                      onChange={handleTimeChange}
+                      color="orange"
+                    >
+                      {timeSlots.map((time) => (
+                        <Option key={time} value={time}>
+                          {time}
+                        </Option>
+                      ))}
+                    </Select>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          <Button
+            type="submit"
+            color="orange"
+            fullWidth
+            disabled={
+              (formData.preference === "watch" &&
+                (!formData.date || !formData.time)) ||
+              buttonStatus
+            }
+            className="mt-6"
+          >
+            {formData.preference === "watch" ? "Schedule Demo" : "Submit"}
+          </Button>
+        </form>
+      </CardBody>
+    </Card>
   );
 };
 
@@ -384,6 +750,9 @@ const NewPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Demo Section */}
+      <ContactDemoForm />
     </div>
   );
 };
