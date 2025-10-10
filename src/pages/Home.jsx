@@ -21,6 +21,7 @@ import iso from "../assets/iso.png";
 import iso1 from "../assets/iso1.png";
 import mems from "../assets/mems.png";
 import { motion } from "framer-motion";
+import EdutechSection from "./EdutechSection";
 
 const Home = () => {
   const settings = {
@@ -235,6 +236,7 @@ const Home = () => {
           </p>
         </div>
       </div>
+      <EdutechSection />
       {/* logo slider */}
       <h3 className="text-3xl justify-center flex m-12 mb-10 w-full contaainer mx-auto sm:overflow-hidden">
         We Partner With
