@@ -26,8 +26,16 @@ export const navbarList = [
   { route: "/courses", name: "Courses" },
   { route: "/Contact", name: "Our Global Pressence" },
   { route: "/Content", name: "Content Corner" },
+  {
 ];
-
+export const navbarList = [
+  ...
+  {
+    route: "/book.html",
+    name: "Book",
+  },
+  ...
+];
 export const courseData = [
   {
     course_id: 1,
