@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My New Book | Radush</title>
-
-<!-- <img src="/assets/logo-IjrLeoFJ.png" class="book" alt="Book Cover"> -->
+<title>SRE as a Business Capability | Radush</title>
 
 <style>
 
@@ -14,12 +12,54 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Inter,sans-serif;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-background:#0b1120;
+background:#f7f9fc;
+color:#1f2937;
+}
+
+header{
+position:sticky;
+top:0;
+background:white;
+border-bottom:1px solid #e5e7eb;
+z-index:100;
+}
+
+nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 20px;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#2563eb;
+text-decoration:none;
+}
+
+.nav-btn{
+background:#2563eb;
+padding:12px 26px;
+border-radius:10px;
 color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.nav-btn:hover{
+background:#1d4ed8;
 }
 
 .container{
@@ -29,98 +69,177 @@ padding:80px 20px;
 }
 
 .hero{
-display:flex;
+display:grid;
+grid-template-columns:420px 1fr;
+gap:80px;
 align-items:center;
-justify-content:center;
-gap:70px;
-flex-wrap:wrap;
+min-height:80vh;
 }
 
 .book{
-width:320px;
-border-radius:15px;
-box-shadow:0 30px 60px rgba(0,0,0,.5);
+width:100%;
+border-radius:18px;
+box-shadow:0 30px 80px rgba(0,0,0,.15);
+transition:.4s;
 }
 
-.content{
-max-width:550px;
+.book:hover{
+transform:translateY(-8px);
 }
 
 .badge{
 display:inline-block;
-padding:8px 16px;
-background:#1d4ed8;
+background:#dbeafe;
+color:#2563eb;
+padding:8px 18px;
 border-radius:30px;
-font-size:14px;
-margin-bottom:20px;
+font-weight:600;
+margin-bottom:25px;
 }
 
 h1{
-font-size:52px;
-margin-bottom:15px;
-line-height:1.1;
+font-size:62px;
+line-height:1.05;
+margin-bottom:20px;
 }
 
 .subtitle{
-font-size:22px;
-color:#94a3b8;
-margin-bottom:30px;
+font-size:24px;
+color:#2563eb;
+font-weight:600;
+margin-bottom:25px;
 }
 
-p{
+.description{
+font-size:18px;
 line-height:1.8;
-color:#cbd5e1;
+color:#4b5563;
 margin-bottom:35px;
 }
 
 .btn{
 display:inline-block;
-padding:18px 42px;
-background:#2563eb;
+padding:18px 40px;
+background:linear-gradient(90deg,#2563eb,#3b82f6);
 color:white;
 text-decoration:none;
-border-radius:10px;
+border-radius:12px;
 font-size:18px;
 font-weight:700;
 transition:.3s;
+box-shadow:0 10px 25px rgba(37,99,235,.3);
 }
 
 .btn:hover{
-background:#1d4ed8;
-transform:translateY(-2px);
+transform:translateY(-3px);
+}
+
+.points{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.point{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:500;
 }
 
 .features{
+background:white;
+padding:90px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:60px;
+}
+
+.cards{
+max-width:1200px;
+margin:auto;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
-margin-top:100px;
 }
 
 .card{
-background:#111827;
-padding:30px;
-border-radius:12px;
+background:#f9fafb;
+padding:35px;
+border-radius:16px;
+transition:.3s;
+border:1px solid #e5e7eb;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
 
 .card h3{
-margin-bottom:10px;
+margin-bottom:15px;
+font-size:22px;
+}
+
+.card p{
+color:#6b7280;
+line-height:1.7;
+}
+
+.about{
+max-width:900px;
+margin:100px auto;
+text-align:center;
+padding:0 20px;
+}
+
+.about h2{
+font-size:42px;
+margin-bottom:25px;
+}
+
+.about p{
+font-size:18px;
+line-height:1.8;
+color:#4b5563;
 }
 
 footer{
+margin-top:80px;
+padding:40px;
 text-align:center;
-padding:50px;
-color:#94a3b8;
+color:#6b7280;
+border-top:1px solid #e5e7eb;
 }
 
-@media(max-width:768px){
-
-h1{
-font-size:38px;
-}
+@media(max-width:900px){
 
 .hero{
+grid-template-columns:1fr;
 text-align:center;
+gap:50px;
+}
+
+.book{
+max-width:330px;
+margin:auto;
+}
+
+h1{
+font-size:42px;
+}
+
+.subtitle{
+font-size:20px;
+}
+
+.points{
+grid-template-columns:1fr;
+text-align:left;
 }
 
 }
@@ -131,60 +250,181 @@ text-align:center;
 
 <body>
 
+<header>
+
+<nav>
+
+<a href="/" class="logo">Radush</a>
+
+<a href="#buy" class="nav-btn">
+Buy Now
+</a>
+
+</nav>
+
+</header>
+
 <div class="container">
 
 <div class="hero">
 
-<img src="/assets/SRE.png" class="book">
+<div>
 
-<div class="content">
+<img src="/assets/SRE.png" class="book" alt="Book Cover">
+
+</div>
+
+<div>
 
 <div class="badge">
 📘 New Release
 </div>
 
-<h1>SRE as a Business Capability</h1>
+<h1>
+SRE as a Business Capability
+</h1>
 
 <div class="subtitle">
+A Practical Guide to Align Engineering Reliability with Business Value
+</div>
+
+<div class="description">
+
+Site Reliability Engineering (SRE) is no longer just an operational discipline—it is a business capability. Learn how leading organizations leverage reliability engineering to improve customer experience, reduce operational risk, accelerate innovation, and create measurable business value.
 
 </div>
 
-<p>
-Site Reliability Engineering (SRE) is no longer just an operational function—it's a critical business capability. This book explores how organizations can leverage SRE principles to improve reliability, accelerate innovation, reduce operational risk, and align technology investments with business outcomes. Through practical frameworks, real-world examples, and actionable strategies, readers will learn how to transform reliability from a technical metric into a competitive advantage.
-</p>
-
-<a href="https://YOUR_BUY_LINK" class="btn">
-Buy Now →
+<a href="YOUR_BUY_LINK" class="btn" id="buy">
+Buy eBook →
 </a>
 
+<div class="points">
+
+<div class="point">
+Business-focused SRE
+</div>
+
+<div class="point">
+SLOs & SLIs
+</div>
+
+<div class="point">
+Observability
+</div>
+
+<div class="point">
+Incident Management
+</div>
+
+<div class="point">
+Automation
+</div>
+
+<div class="point">
+Real-world Frameworks
 </div>
 
 </div>
 
-<div class="features">
+</div>
 
-<!-- <div class="card">
-<h3>🤖 AI Agents</h3>
-<p>Create autonomous AI systems using modern frameworks.</p>
+</div>
+
+</div>
+
+<section class="features">
+
+<h2 class="section-title">
+Why Read This Book?
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+Business Value
+</h3>
+
+<p>
+
+Learn how reliability directly impacts revenue, customer trust, and operational excellence.
+
+</p>
+
 </div>
 
 <div class="card">
-<h3>⚡ Hands-on Projects</h3>
-<p>Build real-world applications instead of toy examples.</p>
+
+<h3>
+Practical Frameworks
+</h3>
+
+<p>
+
+Implement proven SRE practices including SLOs, SLIs, error budgets, and automation.
+
+</p>
+
 </div>
 
 <div class="card">
-<h3>🚀 Production Ready</h3>
-<p>Deployment, APIs, memory, tools, and best practices.</p>
+
+<h3>
+Reliability Culture
+</h3>
+
+<p>
+
+Build engineering teams that prioritize resilience, collaboration, and continuous improvement.
+
+</p>
+
 </div>
 
-</div> -->
+<div class="card">
+
+<h3>
+Production Ready
+</h3>
+
+<p>
+
+Real-world examples and actionable guidance that can be applied immediately.
+
+</p>
 
 </div>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<h2>
+About This Book
+</h2>
+
+<p>
+
+Whether you're an SRE, DevOps Engineer, Platform Engineer, Engineering Manager, CTO, or technology leader, this book provides a practical roadmap for transforming Site Reliability Engineering into a strategic business capability. Through industry examples and implementation guidance, you'll discover how reliability becomes a competitive advantage—not just a technical metric.
+
+</p>
+
+<br><br>
+
+<a href="YOUR_BUY_LINK" class="btn">
+
+Buy Your Copy
+
+</a>
+
+</section>
 
 <footer>
 
-© 2026 Radush.io
+© 2026 Radush.io • All Rights Reserved
 
 </footer>
 
