@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My New Book | Radush</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+body{
+background:#0b1120;
+color:white;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:70px;
+flex-wrap:wrap;
+}
+
+.book{
+width:320px;
+border-radius:15px;
+box-shadow:0 30px 60px rgba(0,0,0,.5);
+}
+
+.content{
+max-width:550px;
+}
+
+.badge{
+display:inline-block;
+padding:8px 16px;
+background:#1d4ed8;
+border-radius:30px;
+font-size:14px;
+margin-bottom:20px;
+}
+
+h1{
+font-size:52px;
+margin-bottom:15px;
+line-height:1.1;
+}
+
+.subtitle{
+font-size:22px;
+color:#94a3b8;
+margin-bottom:30px;
+}
+
+p{
+line-height:1.8;
+color:#cbd5e1;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:18px 42px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+font-weight:700;
+transition:.3s;
+}
+
+.btn:hover{
+background:#1d4ed8;
+transform:translateY(-2px);
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+margin-top:100px;
+}
+
+.card{
+background:#111827;
+padding:30px;
+border-radius:12px;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+footer{
+text-align:center;
+padding:50px;
+color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:38px;
+}
+
+.hero{
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<img src="images/book-cover.jpg" class="book">
+
+<div class="content">
+
+<div class="badge">
+📘 New Release
+</div>
+
+<h1>Building AI Agents</h1>
+
+<div class="subtitle">
+Learn to build production-ready AI Agents using LangGraph, MCP & Modern AI Tools.
+</div>
+
+<p>
+Whether you're a student, software engineer, or AI enthusiast, this book walks you through practical examples and real-world projects to help you build intelligent applications from scratch.
+</p>
+
+<a href="https://YOUR_BUY_LINK" class="btn">
+Buy Now →
+</a>
+
+</div>
+
+</div>
+
+<div class="features">
+
+<div class="card">
+<h3>🤖 AI Agents</h3>
+<p>Create autonomous AI systems using modern frameworks.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Hands-on Projects</h3>
+<p>Build real-world applications instead of toy examples.</p>
+</div>
+
+<div class="card">
+<h3>🚀 Production Ready</h3>
+<p>Deployment, APIs, memory, tools, and best practices.</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Radush.io
+
+</footer>
+
+</body>
+</html>
