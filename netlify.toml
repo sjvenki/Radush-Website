@@ -1,5 +1,5 @@
 # Plain HTML site: no build step, publish the repo root.
 # This file overrides the build settings in the Netlify dashboard.
 [build]
-  command = ""
+  command = "echo 'No build step: plain HTML site'"
   publish = "."
