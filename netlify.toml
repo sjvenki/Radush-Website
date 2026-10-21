@@ -1,0 +1,5 @@
+# Plain HTML site: no build step. The site files live in site/.
+# This file overrides the build settings in the Netlify dashboard.
+[build]
+  command = "echo 'No build step: plain HTML site'"
+  publish = "site"
