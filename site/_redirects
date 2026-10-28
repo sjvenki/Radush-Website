@@ -1,0 +1,32 @@
+# Netlify redirects
+
+# Old site URLs (React site, replaced Oct 2026)
+/privacy-policy            /legal.html#privacy  301
+/terms-and-conditions      /legal.html#terms    301
+/refund-and-cancellation   /legal.html#refund   301
+/courses                   /                   301
+/course-details/*          /                   301
+/training-batch            /                   301
+/training-batch-calendar   /                   301
+/enrollment-payment-link   /                    301
+/speak                     /                    301
+/login                     /                    301
+/register                  /                    301
+/forgot-password           /                    301
+/profile                   /                    301
+/admin                     /                    301
+/manage-paid-users         /                    301
+/crud-training-batch       /                    301
+/content                   /                    301
+/new-page                  /                    301
+/alert                     /                    301
+/budget                    /                    301
+/develop                   /                    301
+/devops                    /                    301
+/fault                     /                    301
+/framing                   /                    301
+/level                     /                    301
+/need                      /                    301
+/velocity                  /                    301
+
+/404 /404.html 404
