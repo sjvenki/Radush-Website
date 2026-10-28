@@ -754,3 +754,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Book page "Buy" links jump to the form; keep it clear of the sticky header */
 #contact-form{ scroll-margin-top: 210px; }
+
+/* v16: products page cards light (white body, brown image panel) to match the capability tiles */
+.pcard{ --accent: #F27B22; background: #fff; border: 1px solid var(--border); color: var(--text); box-shadow: 0 16px 36px -18px rgba(42,20,9,.25); }
+.pcard:hover{ border-color: rgba(242,123,34,.45); box-shadow: var(--shadow); }
+.pcard-copy h3{ color: var(--text); }
+.pcard-copy p{ color: var(--text-soft); }
+.pcard-action{ border-top-color: var(--border); color: var(--orange-deep); font-weight: 500; }
