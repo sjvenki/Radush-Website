@@ -46,9 +46,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Book "Buy" buttons: send the button text (minus "Buy") and author to the contact form,
+  // so a new book only needs a new button, e.g. <a data-buy-by="Author">Buy XYZ eBook</a>
+  document.querySelectorAll('a[data-buy-by]').forEach(function (a) {
+    var item = a.textContent.replace(/\u2192/g, '').trim().replace(/^Buy\s+/i, '');
+    a.href = 'contact.html?buy=' + encodeURIComponent(item) +
+      '&by=' + encodeURIComponent(a.getAttribute('data-buy-by')) + '#contact-form';
+  });
+
   // Contact form (placeholder submit handler until backend function is wired up)
   var contactForm = document.getElementById('contact-form');
   if (contactForm) {
+    // Book "Buy" buttons link here with ?buy=<item>&by=<author> (no payment gateway yet)
+    var params = new URLSearchParams(window.location.search);
+    var message = document.getElementById('message');
+    if (message && !message.value && params.get('buy')) {
+      message.value = 'Hi, I am interested in buying ' + params.get('buy') +
+        (params.get('by') ? ' by ' + params.get('by') : '') + '. Please let me know the next steps.';
+    }
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var status = document.getElementById('form-status');

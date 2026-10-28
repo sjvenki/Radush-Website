@@ -745,3 +745,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .home .card h3{ color: var(--text); }
 .home .card p{ color: var(--text-soft); }
 .home .card .card-link{ color: var(--orange-deep); }
+
+/* v16: home hero + certifications fit in one screen (1920x1080 at 100% and 125% display scaling) */
+.home .hero{ padding: 28px 0 28px; }
+.home .hero-art{ max-width: 420px; }
+.home .trust{ padding: 16px 0; }
+.home .badge-card{ width: 104px; height: 62px; padding: 8px 12px; }
+
+/* Book page "Buy" links jump to the form; keep it clear of the sticky header */
+#contact-form{ scroll-margin-top: 210px; }
