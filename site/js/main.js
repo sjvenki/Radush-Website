@@ -27,6 +27,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Leadership bios (About): first paragraph visible, "Read More" shows the rest
+  document.querySelectorAll('.person.has-more').forEach(function (card) {
+    var btn = card.querySelector('.read-more');
+    if (!btn) return;
+    var label = btn.querySelector('.read-more-label');
+    card.classList.add('is-collapsible');
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      var open = card.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+      if (label) label.textContent = open ? 'Read Less' : 'Read More';
+      if (!open && card.getBoundingClientRect().top < 0) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
   // Legal page tabs
   var tabButtons = document.querySelectorAll('.legal-tabs button');
   if (tabButtons.length) {

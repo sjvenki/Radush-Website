@@ -761,3 +761,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .pcard-copy h3{ color: var(--text); }
 .pcard-copy p{ color: var(--text-soft); }
 .pcard-action{ border-top-color: var(--border); color: var(--orange-deep); font-weight: 500; }
+
+/* v18: leadership bio "Read More" (About). Without JS the whole bio shows (.is-collapsible is added by main.js). */
+.person.has-more{ position: relative; }
+.person.has-more.is-collapsible{ padding-bottom: 60px; }
+.person.is-collapsible:not(.is-open) .bio-more{ display: none; }
+.people-grid:has(.person.is-open){ align-items: start; }
+.read-more{
+  position: absolute; right: 26px; bottom: 18px;
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 0;
+  background: none; border: 0; cursor: pointer;
+  font-family: var(--display); font-size: .88rem; font-weight: 600; color: var(--orange-deep);
+}
+.read-more[hidden]{ display: none; }
+.read-more:hover{ color: var(--orange); }
+.read-more:focus-visible{ outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 4px; }
+.read-more svg{ width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s ease; }
+.person.is-open .read-more svg{ transform: rotate(180deg); }
