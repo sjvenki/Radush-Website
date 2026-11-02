@@ -765,7 +765,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* v18: leadership bio "Read More" (About). Without JS the whole bio shows (.is-collapsible is added by main.js). */
 .person.has-more{ position: relative; }
 .person.has-more.is-collapsible{ padding-bottom: 60px; }
-.person.is-collapsible:not(.is-open) .bio-more{ display: none; }
+.person.is-collapsible:not(.is-open) .bio-more{
+  /* about 5 lines of the next paragraph, fading out above "Read More" */
+  font-size: .93rem; max-height: 8.25em; overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, #fff 35%, transparent);
+  mask-image: linear-gradient(180deg, #fff 35%, transparent);
+}
 .people-grid:has(.person.is-open){ align-items: start; }
 .read-more{
   position: absolute; right: 26px; bottom: 18px;
