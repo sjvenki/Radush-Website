@@ -39,5 +39,5 @@
   blocking handler in `main.js`, set up Netlify email notifications.
 - The "Buy" buttons only open a prefilled enquiry. No payments yet (Razorpay is on the roadmap).
 - Missing `robots.txt`, `sitemap.xml` and Open Graph tags.
-- `README.md` changelog stops at v15 and `book.html` may still contain a `YOUR_BUY_LINK` placeholder. Check both.
+- `README.md` changelog stops at v15 although the live release is v18; bring it up to date.
 - Roadmap: contact form, Razorpay checkout, a simple CMS for blog and news.
