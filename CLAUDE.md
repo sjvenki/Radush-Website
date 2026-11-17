@@ -7,6 +7,8 @@
   in about a minute. The pre-October React site is on branch `backup/pre-v15-react`.
 - Documents (PDF, baselined 17 Nov 2026) are in `docs/`: BRD, Architecture, HLD, LLD. The LLD is the developer
   reference for files, tokens and behaviour. They sit outside `site/`, so they are not published.
+- Why a decision was made: search `docs/history/` (project chat and 11 work threads, 14 Oct to 17 Nov 2026). It is
+  a record, not a specification; the documents above win if they disagree.
 
 ## Layout
 - `site/` is everything that is published (`netlify.toml` sets `publish = "site"`). Do not delete `netlify.toml`:
