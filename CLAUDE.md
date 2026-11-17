@@ -36,9 +36,17 @@
 4. Merge to `main`. Add a "Changes in vNN" note to `README.md`.
 - Rollback: Netlify, Deploys, publish the last good deploy. For a permanent fix, revert the merge commit.
 
-## Known gaps
-- The contact form has no backend (it blocks submit). Fix: `data-netlify="true"` plus a form name, remove the
-  blocking handler in `main.js`, set up Netlify email notifications.
-- The "Buy" buttons only open a prefilled enquiry. No payments yet (Razorpay is on the roadmap).
-- Missing `robots.txt`, `sitemap.xml` and Open Graph tags.
-- Roadmap: contact form, Razorpay checkout, a simple CMS for blog and news.
+## Search and sharing (added in v19)
+- `site/robots.txt` allows all crawling and points to `site/sitemap.xml`, which lists the 12 indexable pages. The
+  404 page has `noindex`; the Search Console file is left out. When you add a page, add it to `sitemap.xml`.
+- Every page head carries a canonical URL, Open Graph tags and `twitter:card` (no X handle, by SJ's choice).
+  The share image is `assets/og-share.jpg` (1200 x 630, orange to light brown). URLs use the `.html` form, matching
+  the site's own links; the main address is `https://radush.io` (no `www`).
+
+## Deferred on purpose (SJ, 17 Nov 2026)
+- Contact form: it has no backend (it blocks submit); email and phone links work. Revisit when traffic grows and
+  enquiries should be stored in a database. Fix then: `data-netlify="true"` plus a form name, remove the blocking
+  handler in `main.js`, set up Netlify email notifications.
+- Payments: the "Buy" buttons only open a prefilled enquiry. No payment integration yet; do not add Razorpay or
+  similar until SJ decides.
+- CMS for blog and news: in the backlog. The pages are static and hand-edited.
