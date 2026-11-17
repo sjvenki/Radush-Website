@@ -43,6 +43,12 @@ static site generator or a CMS — see "What's next" below.
 - All colors, spacing and type sizes are defined as CSS custom properties at
   the top of the file — change a value there and it updates everywhere.
 
+## Changes in v19 (17 Nov 2026, search and sharing)
+- Added `robots.txt` and `sitemap.xml` (12 pages; the 404 page and the Search Console file are left out).
+- Every page head now has a canonical URL, Open Graph tags and `twitter:card`; the 404 page has `noindex`.
+- Added the share preview image `assets/og-share.jpg` (1200 x 630, orange to light brown with the logo and tagline).
+- No visible change to any page.
+
 ## Changes in v18 (2 Nov 2026, About page)
 - Leadership card for Ramesh Alwan (about.html): new bio text and an updated photo (`assets/ramesh.jpg`).
 - The bio now collapses behind a "Read More" button, with a faded preview of the next paragraph above it
