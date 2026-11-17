@@ -9,6 +9,7 @@ serves only `site/`.
 | `Radush-Website-02-Architecture.pdf` | How the site is hosted and put together |
 | `Radush-Website-03-HLD.pdf` | High-level design of pages, content and flows |
 | `Radush-Website-04-LLD.pdf` | Developer reference: files, design tokens, behaviour, how to make a change |
+| `history/` | Project chat and work threads from the claude.ai project (a record, not a specification) |
 
 When the site changes in a way these documents describe, update them and keep the version in the file name or
 header current.
