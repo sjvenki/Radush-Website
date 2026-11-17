@@ -43,6 +43,20 @@ static site generator or a CMS — see "What's next" below.
 - All colors, spacing and type sizes are defined as CSS custom properties at
   the top of the file — change a value there and it updates everywhere.
 
+## Changes in v18 (2 Nov 2026, About page)
+- Leadership card for Ramesh Alwan (about.html): new bio text and an updated photo (`assets/ramesh.jpg`).
+- The bio now collapses behind a "Read More" button, with a faded preview of the next paragraph above it
+  (`.person.has-more`, `.bio-more`, `.read-more` in css/main.css; handler in js/main.js). Without JavaScript the
+  whole bio is shown.
+
+## Changes in v17
+- Moved to the new design (the new static site replaced the old React site).
+- Updated the "Who we are" section.
+- Added the SRE book.
+
+## Changes in v16
+- Minor updates.
+
 ## Changes in v15 (review round 5, home page)
 - Hero image replaced with `assets/hero-art-b.svg` (delivery dashboard in orange and brown, showing the five services). The old `hero-art.svg` was removed.
 - Hero art is larger and no longer fades at the bottom (`.home` override at the end of css/main.css).
